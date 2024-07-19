@@ -5,7 +5,11 @@ body {
 h1,
 h2 {
     color: black;
+}
 
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
 }
 
 .satisfy-regular {
