@@ -8,16 +8,27 @@ h2 {
     color: black;
 }
 
+h1 {
+    font-size: 40px;
+    padding-left: 90px;
+}
+
 h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-transform: uppercase;
+    font-size: 18px;
 }
 
-p,
+p {
+    font-size: 12px;
+    text-align: justify;
+}
+
 a,
 li,
 h6 {
     font-size: 14px;
+    text-align: justify;
 }
 
 .satisfy-regular {
@@ -59,9 +70,22 @@ img {
     margin-top: 15px;
 }
 
+a:hover {
+    color: red;
+}
+
+h1:hover {
+    color: green;
+}
+
+h2:hover {
+    text-decoration: underline;
+}
+
+/*
 .footer {
     left: 50%;
     bottom: 20px;
     border-top: 3px solid #FFF;
-
 }
+    */
