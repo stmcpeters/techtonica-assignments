@@ -28,6 +28,17 @@ h6 {
 
 .description {
     max-width: 600px;
+    text-align: justify;
+}
+
+.credits {
+    display: inline;
+    padding-top: 15px;
+    padding-left: 80px;
+}
+
+img {
+    padding-bottom: 15px;
 }
 
 .left {
