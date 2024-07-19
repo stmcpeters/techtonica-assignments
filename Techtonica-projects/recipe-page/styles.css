@@ -12,6 +12,13 @@ h2 {
     text-transform: uppercase;
 }
 
+p,
+a,
+li,
+h6 {
+    font-size: 14px;
+}
+
 .satisfy-regular {
     font-family: "Satisfy", cursive;
     font-weight: 400;
@@ -25,4 +32,17 @@ h2 {
 .left {
     max-width: 600px;
     float: left;
+}
+
+.right {
+    max-width: 600px;
+    float: left;
+}
+
+.right div {
+    margin-left: 30px;
+}
+
+.left div {
+    margin-top: 15px;
 }
