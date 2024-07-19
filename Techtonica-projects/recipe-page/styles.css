@@ -19,11 +19,7 @@ h2 {
     font-size: 18px;
 }
 
-p {
-    font-size: 12px;
-    text-align: justify;
-}
-
+p,
 a,
 li,
 h6 {
