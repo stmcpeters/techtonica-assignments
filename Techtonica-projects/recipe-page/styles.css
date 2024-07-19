@@ -46,3 +46,10 @@ h6 {
 .left div {
     margin-top: 15px;
 }
+
+.footer {
+    left: 50%;
+    bottom: 20px;
+    border-top: 3px solid #FFF;
+
+}
