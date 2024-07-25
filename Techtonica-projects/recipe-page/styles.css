@@ -85,3 +85,10 @@ h2:hover {
     border-top: 3px solid #FFF;
 }
     */
+
+/* mobile screensize */
+@media(max-width: 425px){
+    .description {
+        width: 100%;
+    }
+}
