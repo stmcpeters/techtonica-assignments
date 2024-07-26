@@ -39,7 +39,7 @@
 
 
 // adding checkbox to ingredients list
-const ingredientsList = document.querySelector(".ingredients-list");
+const ingredientsList = document.querySelector("#ingredients");
 
 // iterate over each <li> element
 ingredientsList.querySelectorAll('.list-items').forEach(item => {
@@ -53,13 +53,13 @@ ingredientsList.querySelectorAll('.list-items').forEach(item => {
         checkbox.id = "id" + item.textContent;
 
     // creating label for checkbox
-    var label = document.createElement("label");
+    let label = document.createElement("label");
     // assigning attributes for the created label tag
     label.htmlFor = "id" + item.textContent;
 
     // // appending the created text to the created label tag
     // label.appendChild(
-    //   document.createTextNode("This creates the label for checkbox.")
+    //   document.createTextNode(item.textContent)
     // );
 
     // appending the checkbox + label to item
