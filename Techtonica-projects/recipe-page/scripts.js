@@ -24,8 +24,9 @@ ingredientsList.querySelectorAll('.list-items').forEach(item => {
     // );
 
     // appending the checkbox + label to item
-    item.appendChild(checkbox);
     item.appendChild(label);
+    item.appendChild(checkbox);
+    
 
 });
 

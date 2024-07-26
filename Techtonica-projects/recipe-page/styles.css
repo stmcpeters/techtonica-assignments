@@ -95,17 +95,43 @@ button,
     margin-left: 10px;
     margin-right: 10px;
 }
-/*
 
-.footer {
-    left: 50%;
-    bottom: 20px;
-    border-top: 3px solid #FFF;
-}
-    */
+
+
+/* large screens
+ @media (max-width: 1000px) {
+    .right, .left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+    }
+}  */
 
 /* mobile screensize
-@media(max-width: 425px){
-    div.right div.left {
-        width: 100%;
-    } */
+@media (max-width: 425px){
+    .right,
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    body {
+        background-color: yellow;
+    }
+} 
+
+
+/* tablets
+@media (min-width: 800px) {
+    .right, .left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    /* body {
+        background-color: grey;
+    }
+} */
