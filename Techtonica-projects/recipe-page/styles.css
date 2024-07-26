@@ -44,8 +44,7 @@ a {
     text-align: justify;
 }
 
-.credits,
-.recipes {
+.credits {
     display: inline;
     padding-top: 15px;
     padding-left: 80px;
@@ -90,7 +89,12 @@ ul {
     list-style-type: none;
 }
 
-
+button,
+.recipes {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 /*
 
 .footer {
