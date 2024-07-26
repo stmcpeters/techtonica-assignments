@@ -109,38 +109,23 @@ button,
 
 
 
- @media (max-width: 900px) {
-    .right, .left {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: space-between;
-    }
-}  
-
-
-@media (max-width: 425px){
-    .right,
-    .left {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: space-between;
-    }
-   body {
+ /* For viewports smaller than 400 pixels wide */
+@media screen and (max-width: 399px) {
+    body {
         background-color: lightblue;
     }
-} 
+}
 
-
-@media (min-width: 800px) {
-    .right, .left {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: space-between;
+/* For viewports between 400 and 799 pixels wide */
+@media screen and (min-width: 400px) and (max-width: 799px) {
+    body {
+        background-color: lightgreen;
     }
-    /* body {
-        background-color: lightblue;
-    } */
+}
+
+/* For viewports 800 pixels wide or wider */
+@media screen and (min-width: 800px) {
+    body {
+        background-color: lavender;
+    }
 }
