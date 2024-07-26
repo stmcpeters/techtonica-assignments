@@ -78,7 +78,12 @@ h2:hover {
     text-decoration: underline;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /*
+
 .footer {
     left: 50%;
     bottom: 20px;
