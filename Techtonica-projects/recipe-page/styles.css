@@ -10,7 +10,8 @@ h2 {
 
 h1 {
     font-size: 40px;
-    padding-left: 90px;
+    text-align: center;
+    max-width: 600px;
 }
 
 h2 {
@@ -27,6 +28,11 @@ h6 {
     text-align: justify;
 }
 
+li,
+a {
+    line-height: 1.5em;
+}
+
 .satisfy-regular {
     font-family: "Satisfy", cursive;
     font-weight: 400;
@@ -38,7 +44,8 @@ h6 {
     text-align: justify;
 }
 
-.credits {
+.credits,
+.recipes {
     display: inline;
     padding-top: 15px;
     padding-left: 80px;
@@ -56,6 +63,7 @@ img {
 .right {
     max-width: 600px;
     float: left;
+
 }
 
 .right div {
@@ -92,9 +100,8 @@ ul {
 }
     */
 
-/* mobile screensize */
+/* mobile screensize
 @media(max-width: 425px){
-    .description {
+    div.right div.left {
         width: 100%;
-    }
-}
+    } */

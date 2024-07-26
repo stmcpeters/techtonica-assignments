@@ -67,3 +67,5 @@ ingredientsList.querySelectorAll('.list-items').forEach(item => {
     item.appendChild(label);
 
 });
+
+
