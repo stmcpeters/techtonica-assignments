@@ -7,6 +7,8 @@ img {
 body {
   padding-left: 50px;
   padding-right: 50px;
+  background-color: lightpink;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 input {
