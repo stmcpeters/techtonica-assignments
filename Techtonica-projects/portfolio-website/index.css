@@ -11,6 +11,15 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-input {
+input[type="text"]{
   display: block;
+  width: 40%;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 5px;
+  margin-left: 60px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
 }
