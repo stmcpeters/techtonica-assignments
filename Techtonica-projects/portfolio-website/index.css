@@ -1,4 +1,14 @@
 img {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
+  border-radius: 15px;
+}
+
+body {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+input {
+  display: block;
 }
