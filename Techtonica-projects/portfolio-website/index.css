@@ -17,6 +17,15 @@ body {
   color: white;
 }
 
+.nav-name {
+  font-family: "DM Serif Display";
+}
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 h5 {
   text-indent: 10px;
 }
