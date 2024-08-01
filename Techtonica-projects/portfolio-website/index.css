@@ -27,13 +27,12 @@ a {
   border-radius: 2%;
   text-align: center;
   color: white;
-  /* text-decoration-style: none;     NOT WORKING   */
 }
 
-/* NOT WORKING
+
 a:hover {
-  text-decoration: underline;
-} */
+  text-decoration: wavy;
+}
 
 .nav-links {
   text-align: center;
@@ -56,6 +55,13 @@ input[type="submit"] {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: medium;
 }
+
+input[type="submit"]:hover {
+  background-color: lightblue;
+  color: black;
+  font-size:large;
+}
+
 /* grid layout 6col 5rows */
 .grid-container {
   display: grid;
@@ -100,7 +106,7 @@ input[type="submit"] {
   border: 2px solid white;
   padding-left: 30px;
   padding-right: 30px;
-  line-height: 15px;
+  line-height: 18px;
 }
 
 .contact {
