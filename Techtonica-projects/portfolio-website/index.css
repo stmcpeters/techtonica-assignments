@@ -12,11 +12,13 @@ img {
 body {
   background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
   font-family: Georgia, 'Times New Roman', Times, serif;
-  margin: 40px;
+  margin: 15px 30px;
   color: white;
-  line-height: 20px;
 }
 
+h5 {
+  text-indent: 10px;
+}
 a {
   display: block;
   padding: 5px;
@@ -25,19 +27,20 @@ a {
   border-radius: 2%;
   text-align: center;
   color: white;
-  text-decoration-style: none;
+  /* text-decoration-style: none;     NOT WORKING   */
 }
 
+/* NOT WORKING
 a:hover {
   text-decoration: underline;
-}
+} */
 
 .nav-links {
   text-align: center;
   list-style-type: none;
 }
 
-li {
+.nav-links li {
   margin: 30px 0;
 }
 
@@ -53,12 +56,12 @@ input[type="submit"] {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: medium;
 }
-/* grid layout 3col 3rows */
+/* grid layout 6col 5rows */
 .grid-container {
   display: grid;
   grid-template-columns: repeat (6, 1fr);
   grid-template-rows: repeat (5, 1fr);
-  gap: 15px;
+  gap: 10px;
   height: 100%;
   width: 100%;
 }
@@ -68,8 +71,10 @@ input[type="submit"] {
   grid-row: 1/2;
   color: white;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 20px;
   font-size: 20px;
+  border: 2px solid white;
+
 }
 
 .nav-buttons {
@@ -81,15 +86,21 @@ input[type="submit"] {
 .bio {
   grid-column: 1/3;
   grid-row: 2/6;
-  max-width: 390px;
+  max-width: 420px;
   border: 2px solid white;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 18px;
 }
 
 .experience {
   grid-column: 3/5;
   grid-row: 2/6;
-  max-width: 400px;
+  max-width: 420px;
   border: 2px solid white;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 15px;
 }
 
 .contact {
@@ -97,5 +108,6 @@ input[type="submit"] {
   grid-row: 2/6;
   max-width: 400px;
   padding-left: 30px;
+  padding-right: 30px;
   border: 2px solid white;
 }
