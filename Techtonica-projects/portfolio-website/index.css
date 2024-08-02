@@ -1,4 +1,8 @@
                             /* Basic Styling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -17,8 +21,12 @@ img {
   margin-right: auto;
 }
 
+h4 {
+  font-size: 14px;
+}
 h5 {
   text-indent: 10px;
+  font-size: 12px;
 }
 
 h6 {
@@ -40,8 +48,17 @@ a {
   color: white;
 }
 
+p {
+  text-align: justify;
+  font-size: 12px;
+}
+
 a:hover {
   text-decoration: wavy;
+}
+
+.experience li {
+  font-size: 12px;
 }
                            /* Inputs + Buttons */
 input[type="text"] {
@@ -86,8 +103,8 @@ input[type="submit"]:hover {
                               /* Grid Layout */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(autofit, (6, 1fr));
+  grid-template-rows: repeat(autofit, (5, 1fr));
   gap: 10px;
   height: 100%;
   width: 100%;
@@ -99,7 +116,8 @@ input[type="submit"]:hover {
   grid-row: 1 / 2;
   color: white;
   text-align: center;
-  padding-top: 20px;
+  word-spacing: 5px;
+  padding-top: 50px;
   font-size: 20px;
   border: 2px solid white;
 }
@@ -126,8 +144,8 @@ input[type="submit"]:hover {
   max-width: 500px;
   border: 2px solid white;
   margin-top: 1px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
   line-height: 18px;
 }
 
@@ -136,7 +154,35 @@ input[type="submit"]:hover {
   grid-row: 2 / 6;
   max-width: 400px;
   margin-top: 1px;
-  padding-left: 30px;
+  padding-left: 70px;
   padding-right: 30px;
   border: 2px solid white;
+}
+
+                              /* Media Queries */
+/* small screens */
+@media only screen and (min-width: 600px) and (max-width: 600px) {
+  body {
+    background-color: pink;
+  }
+
+
+/* @media only screen and (min-width: 600px) {
+
+} */
+
+/* medium devices */
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: lightcyan;
+  }
+}
+
+/* large devices */
+@media only screen and (min-width: 992px) {
+  
+}
+
+@media only screen and (min-width: 1200px) {
+
 }
