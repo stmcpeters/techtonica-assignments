@@ -323,7 +323,7 @@ input[type="submit"]:hover {
 
 
 /* medium devices */
-@media only screen and (min-width: 681px) and (max-width: 900px) {
+@media only screen and (min-width: 681px) and (max-width: 1320px) {
     .grid-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -425,4 +425,8 @@ input[type="submit"]:hover {
       color: black;
       font-size: large;
     }
+    #toTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
 }
