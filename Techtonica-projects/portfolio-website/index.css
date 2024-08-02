@@ -97,8 +97,8 @@ input[type="submit"]:hover {
 }
 
 .nav-links li {
-  margin: 20px 30px;
-  padding-left: 30px;
+  margin: 20px 20px;
+  /* padding-left: 30px; */
 }
 
                               /* Grid Layout */
@@ -106,7 +106,8 @@ input[type="submit"]:hover {
   display: grid;
   grid-template-columns: repeat(autofit, (6, 1fr));
   grid-template-rows: repeat(autofit, (5, 1fr));
-  gap: 10px;
+  column-gap: 10px;
+  row-gap: 10px;
   height: 100%;
   width: 100%;
 }
