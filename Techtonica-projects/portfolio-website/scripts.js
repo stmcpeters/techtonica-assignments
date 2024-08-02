@@ -28,11 +28,11 @@
 
       // get the button
       let toTopBtn = document.getElementById("toTopBtn");
-      // when user scrolls down 20px from the top of document, display button
+      // when user scrolls down 50px from the top of document, display button
       window.onscroll = function () {scrollFunction()};
 
       function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
           toTopBtn.style.display = "block";
         } else {
           toTopBtn.style.display = "none";
@@ -44,3 +44,12 @@
         document.body.scrollTop = 0; // for safari browsers
         document.documentElement.scrollTop = 0; // for chrome, firefox, IE and opera
       }
+
+  // adding more text to document
+  // selecting about section
+  let about = document.getElementById("about");
+  // locating child p element to about section
+  // console.log(about.children);  // noted at index 4
+  let p = about.children[4];
+  // add onto existing p tag
+  p.textContent += " I’ve experienced firsthand the rapid changes in San Francisco due to the growth of the tech industry. As someone who has lived here my whole life, I’ve seen how these changes have brought both opportunities and challenges to our community. The influx of tech companies has promoted economic growth and innovation, but it has also led to gentrification, impacting long-time residents and increasing socio-economic disparities.";
