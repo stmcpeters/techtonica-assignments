@@ -160,29 +160,30 @@ input[type="submit"]:hover {
 }
 
                               /* Media Queries */
-/* small screens */
+/* small screens
 @media only screen and (min-width: 600px) and (max-width: 600px) {
   body {
     background-color: pink;
   }
 
 
-/* @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) {
 
 } */
 
-/* medium devices */
+/* medium devices
 @media only screen and (min-width: 768px) {
   body {
     background-color: lightcyan;
   }
 }
+*/
 
-/* large devices */
+/* large devices
 @media only screen and (min-width: 992px) {
   
 }
 
 @media only screen and (min-width: 1200px) {
 
-}
+} */
