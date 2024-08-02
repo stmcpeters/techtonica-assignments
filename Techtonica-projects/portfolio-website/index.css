@@ -213,7 +213,7 @@ input[type="submit"]:hover {
 
                               /* Media Queries */
 /* small screens */
-@media all and (min-width:0px) and (max-width: 512px) {
+@media all and (min-width:0px) and (max-width: 680px) {
     .grid-container {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -302,7 +302,7 @@ input[type="submit"]:hover {
 
 
 /* medium devices */
-@media only screen and (min-width: 513px) and (max-width: 900px) {
+@media only screen and (min-width: 681px) and (max-width: 900px) {
     .grid-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
