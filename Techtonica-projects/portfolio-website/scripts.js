@@ -15,7 +15,7 @@
     }
     // when use clicks on span (x), close the modal
     span.onclick = function() {
-      modal.style.display = none;
+      modal.style.display = "none";
     }
     // when user clicks outside of modal, close modal
     window.onclick = function(event) {
