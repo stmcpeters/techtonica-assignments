@@ -146,8 +146,12 @@ input[type="submit"]:hover {
   text-decoration: none;
   cursor: pointer;
 }
-                            /* The Modal(button) */
+                            /* buttons */
+/* modal */
 #myBtn {
+  display: none;
+}
+#toTopBtn {
   display: none;
 }
                               /* Grid Layout */
@@ -323,7 +327,7 @@ input[type="submit"]:hover {
 
 
 /* medium devices */
-@media only screen and (min-width: 681px) and (max-width: 1320px) {
+@media only screen and (min-width: 681px) and (max-width: 1100px) {
     .grid-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -429,5 +433,20 @@ input[type="submit"]:hover {
       display: none;
       position: fixed;
       bottom: 20px;
+
+      right: 30px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+
+    #toTopBtn:hover {
+      background-color: #555;
     }
 }
