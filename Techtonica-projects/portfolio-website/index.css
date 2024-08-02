@@ -1,15 +1,4 @@
-img {
-  width: 320px;
-  height: 340px;
-  border-radius: 15px;
-  border: 2px solid white;
-  border-radius: 50%;
-  margin-top: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+                            /* Basic Styling */
 body {
   background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -17,18 +6,30 @@ body {
   color: white;
 }
 
-.nav-name {
-  font-family: "DM Serif Display";
-}
-.dm-serif-display-regular {
-  font-family: "DM Serif Display", serif;
-  font-weight: 400;
-  font-style: normal;
+img {
+  width: 320px;
+  height: 340px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h5 {
   text-indent: 10px;
 }
+
+h6 {
+  margin-top: 1px;
+}
+
+li {
+  font-size: 15px;
+  text-indent: 0;
+}
+
 a {
   display: block;
   padding: 5px;
@@ -39,14 +40,39 @@ a {
   color: white;
 }
 
-p {
-  margin-top: 1px;
-}
-
 a:hover {
   text-decoration: wavy;
 }
+                           /* Inputs + Buttons */
+input[type="text"] {
+  display: block;
+}
 
+input[type="submit"] {
+  display: block;
+  margin-top: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+}
+
+input[type="submit"]:hover {
+  background-color: lightblue;
+  color: black;
+  font-size: large;
+}
+
+                                /* Fonts */
+.nav-name {
+  font-family: "DM Serif Display";
+}
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+                              /* Navigation */
 .nav-links {
   text-align: center;
   list-style-type: none;
@@ -56,55 +82,35 @@ a:hover {
   margin: 30px 0;
 }
 
-input[type="text"]{
-  display: block;
-  /* width: 40%; */
-}
-
-input[type="submit"] {
-  display: block;
-  margin-top: 5px;
-  /* margin-left: 60px; */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: medium;
-}
-
-input[type="submit"]:hover {
-  background-color: lightblue;
-  color: black;
-  font-size:large;
-}
-
-/* grid layout 6col 5rows */
+                              /* Grid Layout */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat (6, 1fr);
-  grid-template-rows: repeat (5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 10px;
   height: 100%;
   width: 100%;
 }
 
+                              /* Grid Items */
 .nav-name {
-  grid-column: 1/5;
-  grid-row: 1/2;
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
   color: white;
   text-align: center;
   padding-top: 20px;
   font-size: 20px;
   border: 2px solid white;
-
 }
 
 .nav-buttons {
-  grid-column: 5/7;
-  grid-row: 1,2;
+  grid-column: 5 / 7;
+  grid-row: 1 / 2;
 }
 
-
 .bio {
-  grid-column: 1/3;
-  grid-row: 2/6;
+  grid-column: 1 / 3;
+  grid-row: 2 / 6;
   max-width: 500px;
   border: 2px solid white;
   margin-top: 1px;
@@ -114,8 +120,8 @@ input[type="submit"]:hover {
 }
 
 .experience {
-  grid-column: 3/5;
-  grid-row: 2/6;
+  grid-column: 3 / 5;
+  grid-row: 2 / 6;
   max-width: 500px;
   border: 2px solid white;
   margin-top: 1px;
@@ -125,8 +131,8 @@ input[type="submit"]:hover {
 }
 
 .contact {
-  grid-column: 5/7;
-  grid-row: 2/6;
+  grid-column: 5 / 7;
+  grid-row: 2 / 6;
   max-width: 400px;
   margin-top: 1px;
   padding-left: 30px;
