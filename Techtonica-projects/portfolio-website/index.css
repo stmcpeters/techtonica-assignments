@@ -46,6 +46,7 @@ a {
   border-radius: 2%;
   text-align: center;
   color: white;
+  text-decoration: none !important;
 }
 
 p {
@@ -54,7 +55,8 @@ p {
 }
 
 a:hover {
-  text-decoration: wavy;
+  background-color: white;
+  color: black;
 }
 
 .experience li {
