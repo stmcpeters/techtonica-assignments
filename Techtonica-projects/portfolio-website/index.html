@@ -10,11 +10,23 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <!-- title of page -->
+      <!-- title of page -->
       <title>Steph's Portfolio</title>
     </head>
 
     <body>
+      <!-- open modal -->
+      <button id="myBtn">Open Modal</button>
+      <!-- modal -->
+      <div id="myModal" class="modal">
+      <!-- modal content -->
+        <div class="modal-content">
+          <span class="close">X</span>
+          <p>Hello! <br> Welcome to my portfolio project, please be sure to use the contact form below to submit any questions, comments, concerns, or compliments HAHA. <br> Click the X or click anywhere to view the page. <br> Thanks <3</p>
+        </div>
+      </div>
+      <!-- end of modal -->
+
       <div class="grid-container">
       <!-- header-->
             <div class="nav-name">
@@ -22,11 +34,11 @@
               <h2>Full Stack Web Developer</h2>
             </div>
             <div class="nav-buttons">
-              <ul class="nav-links">
-                <li><a id="links" href="#nav-name">Home</a></li>
-                <li><a id="links" href="#about">About</a></li>
-                <li><a id="links" href="#experience">Experience</a></li> 
-                <li><a id="links" href="#contact">Contact</a></li>
+              <ul id="menu" class="nav-links">
+                <li><a class="menuItem" id="links" href="#nav-name">Home</a></li>
+                <li><a class="menuItem" id="links" href="#about">About</a></li>
+                <li><a class="menuItem" id="links" href="#experience">Experience</a></li> 
+                <li><a class="menuItem" id="links" href="#contact">Contact</a></li>
               </ul>
             </div>
       <!-- end of header -->
