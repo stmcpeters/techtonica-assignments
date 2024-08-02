@@ -79,7 +79,8 @@ input[type="submit"]:hover {
 }
 
 .nav-links li {
-  margin: 30px 0;
+  margin: 20px 30px;
+  padding: 20px 30px;
 }
 
                               /* Grid Layout */
