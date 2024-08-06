@@ -97,3 +97,5 @@ eventArray.forEach((event) => {
 console.log(eventObj.searchTickets(0,100));
 console.log(eventObj2.searchTickets(100,200));
 console.log(eventObj3.searchTickets(100,200));
+
+// challenge problems
