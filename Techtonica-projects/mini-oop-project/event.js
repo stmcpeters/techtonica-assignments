@@ -14,8 +14,8 @@ class Event {
   }
 // function allTickets that returns a string with all ticket types and prices:
 // "all tickets: 1. Orchestra ($300) 2. Mezzanine ($200) 3. Balcony ($100)"
-  allTicket(){
-    console.log(`All tickets: 1.${this.type} $${this.price}`);
+  allTickets(){
+    console.log(`All tickets: 1.${this.type} ($${this.price}) 2.${this.type} ($${this.price}) 3.${this.type} ($${this.price})`);
   }
 }
 
