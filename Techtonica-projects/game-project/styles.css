@@ -1,0 +1,4 @@
+/* displays word to guess using all caps */
+h2 {
+  text-transform: uppercase;
+}
