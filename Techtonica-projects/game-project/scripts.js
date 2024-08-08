@@ -7,10 +7,11 @@
     ]
 
 // variable for word currently displaying
-let displayWord = "";
+let displayElement = document.getElementById('displayWord').innerHTML;
 
 // process to scramble the words
-
+let scrambledWord = displayElement.split('');
+// 
 
 
 // process to display corresponding hint with word
