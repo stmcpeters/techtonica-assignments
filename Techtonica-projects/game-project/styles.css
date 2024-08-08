@@ -16,6 +16,10 @@ body {
   margin-inline: 40%;
 }
 
+input.btn {
+  max-width: fit-content;
+}
+
 
                       /* MEDIA QUERIES */
   /* large screens */
@@ -32,9 +36,11 @@ body {
 @media screen and (min-width: 0) and (max-width: 940px) {
   body {
     background-color: blanchedalmond;
+    margin: 0
   }
   #content {
-    max-width: 100%;
-    padding: 50px;
+    padding: 20px;
+    margin-left: 35%;
+    margin-right: auto;
   }
 }
