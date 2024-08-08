@@ -11,38 +11,28 @@
   </head>
 
   <body>
-    <h1 class="title">Word Scramble</h1>
-    <!-- div to hold word to guess -->
-    <div>
-      <h2 class="scrambled-word">example word</h2>
-      <p class="hint">Hint:</p>
-    </div>
+    <!-- div to hold all content on page -->
+    <div id="content">
+      <h1 class="title">Word Scramble</h1>
+      <!-- examples to see / will replace with word and hint that will be shuffled -->
+      <h2 class="displayWord">hello</h2>
+      <p class="hint">Hint: human greeting</p>
 
-    <!-- div to hold input box and buttons-->
-    <div>
-      <form>
-        <label for="guess-input"></label>
-        <input type="text" id="guess-input" name="guess-input" required></input>
-      </form>
-      <!-- line break between input field and buttons-->
-      <br>
-      <!-- line break between input field and buttons -->
-      <div class="button-container">
-        <button class="btn" type="submit" onclick="">Check</button>
-        <!-- button to refresh word/clear input -->
-        <button class="btn" type="reset" onclick="">Clear</button>
+
+      <!-- div to hold input box and button-->
+      <div>
+        <form id="inputForm">
+          <label for="guess-input"></label>
+          <input type="text" id="guess-input" name="guess-input" placeholder="Enter guess here" required></input>
+        </form>
+        <!-- line break between input field and buttons-->
+        <br>
+        <!-- line break between input field and buttons -->
+        <div class="button-container">
+          <button type="button" class="btn" type="submit">Check</button>
+        </div>
       </div>
     </div>
-    
-
-
-
-
-
-
-
-
-
 
 
     <script src="scripts.js"></script>
