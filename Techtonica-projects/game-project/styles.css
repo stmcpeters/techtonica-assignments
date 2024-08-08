@@ -1,4 +1,40 @@
-/* displays word to guess using all caps */
+/* shows displayWord using all caps */
 h2 {
   text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+body {
+  background-color: lightblue;
+}
+
+#content {
+  max-width: fit-content;
+  padding: 50px;
+  background-color: white;
+  margin-top: 50px;
+  margin-inline: 40%;
+}
+
+
+                      /* MEDIA QUERIES */
+  /* large screens */
+@media screen and (max-width: 1325px){
+  body {
+    background-color: pink;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+}
+  /* medium screens */
+@media screen and (min-width: 0) and (max-width: 940px) {
+  body {
+    background-color: blanchedalmond;
+  }
+  #content {
+    max-width: 100%;
+    padding: 50px;
+  }
 }
