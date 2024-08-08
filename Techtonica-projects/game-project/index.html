@@ -11,27 +11,26 @@
   </head>
 
   <body>
-    <h1>Word Scramble</h1>
+    <h1 class="title">Word Scramble</h1>
     <!-- div to hold word to guess -->
     <div>
-      <h2>example word</h2>
-      <p>Hint:</p>
+      <h2 class="scrambled-word">example word</h2>
+      <p class="hint">Hint:</p>
     </div>
 
     <!-- div to hold input box and buttons-->
     <div>
       <form>
-      <label for="guess-input"></label>
-      <input type="text" id="guess-input" name="guess-input"></input>
-      
+        <label for="guess-input"></label>
+        <input type="text" id="guess-input" name="guess-input" required></input>
+      </form>
       <!-- line break between input field and buttons-->
       <br>
-
+      <!-- line break between input field and buttons -->
       <div class="button-container">
-        <button class="btn" type="submit">Submit Guess</button>
+        <button class="btn" type="submit" onclick="">Check</button>
         <!-- button to refresh word/clear input -->
-        <button class="btn" type="reset">Clear</button>
-      </form>
+        <button class="btn" type="reset" onclick="">Clear</button>
       </div>
     </div>
     
