@@ -1,13 +1,14 @@
 // create array to hold objects of words and hints
     const wordsAndHints = [
-      {word: "hello", hint: "human greeting"},
-      {word: "javascript", hint: "programming language that can manipulate and validate data using HTML and CSS"},
-      {word: "array", hint: "collections of ordered items and have indexes"},
-      {word: "object", hint: "collections of unordered properties; properties serve the same purpose as indexes"}
-    ]
+        {word: "hello", hint: "human greeting"},
+        {word: "javascript", hint: "programming language that can manipulate and validate data using HTML and CSS"},
+        {word: "array", hint: "collections of ordered items and have indexes"},
+        {word: "object", hint: "collections of unordered properties; properties serve the same purpose as indexes"}
+    ];
 
+    
 // set global variable for word currently displaying
-    const wordToScramble = document.getElementById('displayWord').innerHTML
+    const wordToScramble = document.getElementById('displayWord').innerHTML;
 
 // function to scramble word displayed
     function wordScramble() {
@@ -27,10 +28,19 @@
 
 
 // process to display corresponding hint with word
+// variable for current word in word/hint array
+    let currentIndex = 0; 
 
-
+    // function randomWordAndHint() {
+    //     currentIndex = Math.floor(Math.random() * wordsAndHints.length);
+    //     const currentWord = wordsAndHints[currentIndex];
+    //     document.getElementById('displayWord').textContent = currentWord.word;
+    //     document.getElementById('hint').textContent  = currentWord.hint;
+    //     wordScramble();
+    // }
 
 // validation for input box
+    const inputForm = document.getElementById('inputForm');
     // addEventListener to text box to wait until validation is done before submitting (page reloads)
         inputForm.addEventListener('submit', function(event){
             event.preventDefault();
@@ -40,33 +50,16 @@
             // check if guessed value is equal to displayed word
                 if (guess === document.getElementById('displayWord').textContent){
                     alert("You got it!");
-                    score++;
                 } else {
                     alert("So close! Guess again");
                 }
-        })
+        });
 
 
 // scramble display word on page load
     // select word displayed using DOM
     // add eventlistener to scramble word when page loads
-    wordToScramble.addEventListener('onload', wordScramble());
+    displayWord.addEventListener('onload', wordScramble());
 
 
-    
-// // button actions
-
-// // check/submit button to begin validation on click
-//     // select submit button using DOM
-//         const submitBtn = document.getElementById("submit-btn");
-//     // addeventlistener to activate validation when clicked
-//         submitBtn.addEventListener('onclick', function(event){
-//             event.correctOrNot();
-//         })
-
-// create score and display it
-    // set score = 0
-        let score = 0;
-    //update score when it changes
-        score = document.getElementById("score-display").innerText;
 
