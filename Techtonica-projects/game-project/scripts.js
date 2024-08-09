@@ -6,13 +6,22 @@
       {word: "object", hint: "collections of unordered properties; properties serve the same purpose as indexes"}
     ]
 
-// variable for word currently displaying
-let displayElement = document.getElementById('displayWord').innerHTML;
+// function to scramble word displayed
+function wordScramble() {
+    // select value for word currently displaying
+        const wordToScramble = document.getElementById('displayWord').innerHTML
+    // process to scramble the word
+    // split() method splits word displaying into an array of chars
+        let chars = wordToScramble.split('');
+    // sort() randomly shuffles chars w/ comparison function of # btwn 0-1
+        chars.sort(() => 0.5 - Math.random());
+    // join() will join chars back together
+        const scrambled = chars.join("");
 
-// process to scramble the words
-let scrambledWord = displayElement.split('');
-// 
+    // update value for word currently displaying
+        document.getElementById('displayWord').innerHTML = scrambled;
 
+}
 
 // process to display corresponding hint with word
 
