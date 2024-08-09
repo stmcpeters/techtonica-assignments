@@ -1,3 +1,4 @@
+# Week 4 Project: Word Scramble Game
 <strong>Introduction:</strong> <br>
 The Word Scramble Game is a simple yet fun web-based game designed for educational purposes. 
 It's designed to improve vocabulary skills and challenges users to use provided hints to guess scrambled words taken from the Techtonica program curriculum. 
