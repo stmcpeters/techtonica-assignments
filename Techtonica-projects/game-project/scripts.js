@@ -7,12 +7,15 @@
     ];
 
     
-// set global variable for word currently displaying
-    const wordToScramble = document.getElementById('displayWord').innerHTML;
+// set global variable for original version of word currently displaying
+    let originalWord = document.getElementById('displayWord').textContent;
+    // console.log(originalWord);
 
+    
 // function to scramble word displayed
     function wordScramble() {
-
+        // select variable for word currently displaying
+        const wordToScramble = document.getElementById('displayWord').textContent;
         // process to scramble the word
         // split() method splits word displaying into an array of chars
             let chars = wordToScramble.split('');
@@ -22,22 +25,22 @@
             const scrambled = chars.join("");
 
         // update value for word currently displaying
-            document.getElementById('displayWord').innerHTML = scrambled;
+            document.getElementById('displayWord').textContent = scrambled;
 
     }
 
 
-// process to display corresponding hint with word
-// variable for current word in word/hint array
-    let currentIndex = 0; 
+// // process to display corresponding hint with word
+// // variable for current word in word/hint array
+//     let currentIndex = 0; 
 
-    // function randomWordAndHint() {
-    //     currentIndex = Math.floor(Math.random() * wordsAndHints.length);
-    //     const currentWord = wordsAndHints[currentIndex];
-    //     document.getElementById('displayWord').textContent = currentWord.word;
-    //     document.getElementById('hint').textContent  = currentWord.hint;
-    //     wordScramble();
-    // }
+//     // function randomWordAndHint() {
+//     //     currentIndex = Math.floor(Math.random() * wordsAndHints.length);
+//     //     const currentWord = wordsAndHints[currentIndex];
+//     //     document.getElementById('displayWord').textContent = currentWord.word;
+//     //     document.getElementById('hint').textContent  = currentWord.hint;
+//     //     wordScramble();
+//     // }
 
 // validation for input box
     const inputForm = document.getElementById('inputForm');
@@ -47,12 +50,17 @@
 
             // select input value to check for validation (guess is correct or not)
                 const guess = document.getElementById('guess-input').value;
+
+                console.log(`User's guess: "${guess}"`); // Log the user's guess
+                console.log(`Displayed word: "${originalWord}"`); // Log the displayed word
+
             // check if guessed value is equal to displayed word
-                if (guess === document.getElementById('displayWord').textContent){
+                if (guess.toLowerCase === originalWord.toLowerCase){
                     alert("You got it!");
                 } else {
                     alert("So close! Guess again");
                 }
+            // wordScramble();     scrambles another word after submitting
         });
 
 
