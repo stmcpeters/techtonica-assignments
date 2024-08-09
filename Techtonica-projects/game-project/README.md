@@ -24,10 +24,10 @@ Hope you enjoy!
 
 <strong>Installation:</strong> <br>
 To set up the Word Scramble Game on your local machine, follow these steps:
-1. git clone https://github.com/stmcpeters/Techtonica-Assignments
-2. navigate to the game project directory: <br> <code>cd techtonica-assignments/techtonica-projects/game-project</code>
-3. open <code>index.html</code> file in your preferred web browser
-4. have fun!
+1. Clone repository onto your local machine: <code>git clone https://github.com/stmcpeters/Techtonica-Assignments.git</code>
+2. Navigate to the game project directory: <code>cd techtonica-assignments/techtonica-projects/game-project</code>
+3. Open <code>index.html</code> file in your preferred web browser
+4. Have fun!
 
 <strong>Usage:</strong> <br> 
 - Open <code>index.html</code> file in a web browser.
