@@ -9,7 +9,13 @@ Hope you enjoy!
 <strong>Features:</strong> <br>
 - Gameplay: Players receive a scrambled word along with a hint and must guess the word correctly.
 - Content: Words and hints are randomly selected from a predefined list, enabling endless gameplay!
-- Feedback: Players are provided immediate feedback after each guess, stating if they're correct or need to try again. 
+- Feedback: Players are provided immediate feedback after each guess, stating if they're correct or need to try again.
+
+<strong>Screenshots of Gameplay:</strong> <br>
+<img width="275" height="200" alt="Screenshot of game start page" src="https://github.com/user-attachments/assets/7cab6b4d-d681-4966-85a7-218d9be7a5d6">
+<img width="275" height="200" alt="Screenshot of correct answer result" src="https://github.com/user-attachments/assets/d0484336-b176-44a9-9cbf-2a3ce6dd3653">
+<img width="275" height="200" alt="Screenshot of incorrect answer result" src="https://github.com/user-attachments/assets/9e1a0658-4b35-4705-bd7e-f7720f11d203">
+
 
 <strong>Technologies:</strong> <br>
 - HTML: Used to structure game layout and content
