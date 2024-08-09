@@ -39,6 +39,7 @@
             // check if guessed value is equal to displayed word
                 if (guess === document.getElementById('displayWord').textContent){
                     alert("You got it!");
+                    score++;
                 } else {
                     alert("So close! Refresh the page to try again");
                 }
@@ -55,7 +56,11 @@
 //             event.correctOrNot();
 //         })
 
-// score 
+// create score and display it
+    // set score = 0
+        let score = 0;
+    //update score when it changes
+        score = document.getElementById("score-display").innerText;
 
 
 
