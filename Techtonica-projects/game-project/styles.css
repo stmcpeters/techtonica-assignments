@@ -1,4 +1,75 @@
-/* displays word to guess using all caps */
+/* shows displayWord using all caps */
 h2 {
   text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+body {
+  background-color: lightblue;
+}
+
+#content {
+  max-width: fit-content;
+  padding: 50px;
+  background-color: white;
+  position: absolute;
+  margin: 50px auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+div#content {
+  max-width: 100%;
+  position: absolute;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+input.btn {
+  max-width: fit-content;
+}
+
+.button-container {
+  margin: 5px;
+}
+
+.btn{
+  margin-inline: 5px;
+}
+
+#guess-input{
+  align-content: center;
+}
+
+                      /* MEDIA QUERIES */
+  /* medium screens */
+@media screen and (max-width: 762px){
+  body {
+    background-color: pink;
+  }
+  #content{
+    position: absolute;
+    padding: 50px;
+    background-color: white;
+    margin-top: 50px;
+    margin-right: 70px;
+    margin-left: 70px;
+
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
+  /* small screens */
+@media screen and (min-width: 0) and (max-width: 425px) {
+  body {
+    background-color: blanchedalmond;
+    margin: 0
+  }
+  #content {
+    padding: 50px;
+    margin-left: 35%; 
+    max-width: fit-content;
+
+  }
 }
