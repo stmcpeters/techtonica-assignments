@@ -25,6 +25,7 @@
 
     }
 
+
 // process to display corresponding hint with word
 
 
@@ -41,11 +42,18 @@
                     alert("You got it!");
                     score++;
                 } else {
-                    alert("So close! Refresh the page to try again");
+                    alert("So close! Guess again");
                 }
         })
 
 
+// scramble display word on page load
+    // select word displayed using DOM
+    // add eventlistener to scramble word when page loads
+    wordToScramble.addEventListener('onload', wordScramble());
+
+
+    
 // // button actions
 
 // // check/submit button to begin validation on click
@@ -62,6 +70,3 @@
     //update score when it changes
         score = document.getElementById("score-display").innerText;
 
-
-
-// reset game after round finished
