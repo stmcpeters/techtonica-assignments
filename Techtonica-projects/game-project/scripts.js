@@ -6,58 +6,54 @@
       {word: "object", hint: "collections of unordered properties; properties serve the same purpose as indexes"}
     ]
 
+// set global variable for word currently displaying
+    const wordToScramble = document.getElementById('displayWord').innerHTML
+
 // function to scramble word displayed
-function wordScramble() {
-    // select value for word currently displaying
-        const wordToScramble = document.getElementById('displayWord').innerHTML
-    // process to scramble the word
-    // split() method splits word displaying into an array of chars
-        let chars = wordToScramble.split('');
-    // sort() randomly shuffles chars w/ comparison function of # btwn 0-1
-        chars.sort(() => 0.5 - Math.random());
-    // join() will join chars back together
-        const scrambled = chars.join("");
+    function wordScramble() {
 
-    // update value for word currently displaying
-        document.getElementById('displayWord').inneqrHTML = scrambled;
+        // process to scramble the word
+        // split() method splits word displaying into an array of chars
+            let chars = wordToScramble.split('');
+        // sort() randomly shuffles chars w/ comparison function of # btwn 0-1
+            chars.sort(() => 0.5 - Math.random());
+        // join() will join chars back together
+            const scrambled = chars.join("");
 
-}
+        // update value for word currently displaying
+            document.getElementById('displayWord').innerHTML = scrambled;
+
+    }
 
 // process to display corresponding hint with word
 
 
 
 // validation for input box
+    // addEventListener to text box to wait until validation is done before submitting (page reloads)
+        inputForm.addEventListener('submit', function(event){
+            event.preventDefault();
 
-// addEventListener to input box to wait until validation is done before submitting input (preventDefault)
-// selecting input box using DOM
-    const inputForm = document.getElementById('inputForm');
-    // addEventListener to text box to wait until validation is done before submitting
-    inputForm.addEventListener('submit', function(event){
-        event.preventDefault();
-    })
-
-// // select input value to check against validation
-//     const guess = document.getElementById('guess-input').value;
-// // check if guess has same characters as scrambled word
-//     if (guess.length !== displayWord.length){
-//       alert("Please enter valid guess");
-//     }
-
-// button actions
-
-// check/submit button
-// function check(){
-//   // check if guess input === displayWord
-//     if (guess === displayWord) {
-//       alert("You got it!");
-//     } // DOESNT WORK
-//      // } else {
-//     //   alert("Try again!"); 
-//     // }
-// }
+            // select input value to check for validation (guess is correct or not)
+                const guess = document.getElementById('guess-input').value;
+            // check if guessed value is equal to displayed word
+                if (guess === document.getElementById('displayWord').textContent){
+                    alert("You got it!");
+                } else {
+                    alert("So close! Refresh the page to try again");
+                }
+        })
 
 
+// // button actions
+
+// // check/submit button to begin validation on click
+//     // select submit button using DOM
+//         const submitBtn = document.getElementById("submit-btn");
+//     // addeventlistener to activate validation when clicked
+//         submitBtn.addEventListener('onclick', function(event){
+//             event.correctOrNot();
+//         })
 
 // score 
 
