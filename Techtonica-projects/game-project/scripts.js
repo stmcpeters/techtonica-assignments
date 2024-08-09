@@ -19,7 +19,7 @@ function wordScramble() {
         const scrambled = chars.join("");
 
     // update value for word currently displaying
-        document.getElementById('displayWord').innerHTML = scrambled;
+        document.getElementById('displayWord').inneqrHTML = scrambled;
 
 }
 
@@ -29,9 +29,11 @@ function wordScramble() {
 
 // validation for input box
 
-// addEventListener to wait until validation is done before submitting input (preventDefault)
+// addEventListener to input box to wait until validation is done before submitting input (preventDefault)
 // selecting input box using DOM
-    const inputForm = document.getElementById('inputForm').addEventListener('submit', function(event){
+    const inputForm = document.getElementById('inputForm');
+    // addEventListener to text box to wait until validation is done before submitting
+    inputForm.addEventListener('submit', function(event){
         event.preventDefault();
     })
 
