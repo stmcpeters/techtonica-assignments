@@ -1,6 +1,6 @@
 # Week 4 Project: Word Scramble Game
 <strong>Introduction:</strong> <br>
-The Word Scramble Game is a simple yet fun web-based game designed for educational purposes. 
+The Word Scramble Game is a simple yet fun, web-based game designed for educational purposes. 
 It's designed to improve vocabulary skills and challenges users to use provided hints to guess scrambled words taken from the Techtonica program curriculum. 
 This project was created for Week 4's weekly solo projects for Techtonica. 
 The Word Scramble Game is created using HTML, a little CSS, and JavaScript. 
@@ -26,11 +26,11 @@ Hope you enjoy!
 To set up the Word Scramble Game on your local machine, follow these steps:
 1. git clone https://github.com/stmcpeters/Techtonica-Assignments
 2. navigate to the game project directory: <br> <code>cd techtonica-assignments/techtonica-projects/game-project</code>
-3. open the index.html in your preferred web browser
+3. open <code>index.html</code> file in your preferred web browser
 4. have fun!
 
 <strong>Usage:</strong> <br> 
-- Open the <code>index.html</code> file in a web browser.
+- Open <code>index.html</code> file in a web browser.
 - The game will automatically present a scrambled word along with a hint. Enter your guess in the input field and click the "Check" button to submit your guess.
 - Receive immediate feedback on your guess. If correct, a new round will begin automatically. If incorrect, try again or reset the game using the "Clear" button.
 
