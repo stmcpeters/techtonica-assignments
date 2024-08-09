@@ -1,17 +1,16 @@
 // create array to hold objects of words and hints
     const wordsAndHints = [
-        {word: "hello", hint: "human greeting"},
-        {word: "javascript", hint: "programming language that can manipulate and validate data using HTML and CSS"},
-        {word: "array", hint: "collections of ordered items and have indexes"},
-        {word: "object", hint: "collections of unordered properties; properties serve the same purpose as indexes"}
+        {word: "hello", hint: "Hint: human greeting"},
+        {word: "javascript", hint: "Hint: programming language that can dynamically manipulate data using HTML and CSS"},
+        {word: "array", hint: "Hint: collections of ordered items and have indexes"},
+        {word: "object", hint: "Hint: collections of unordered properties; has properties instead of indexes"}
     ];
 
     
 // set global variable for original version of word currently displaying
-    let originalWord = document.getElementById('displayWord').textContent;
-    // console.log(originalWord);
+    let originalWord = '';
 
-    
+
 // function to scramble word displayed
     function wordScramble() {
         // select variable for word currently displaying
@@ -31,16 +30,14 @@
 
 
 // // process to display corresponding hint with word
-// // variable for current word in word/hint array
-//     let currentIndex = 0; 
 
-//     // function randomWordAndHint() {
-//     //     currentIndex = Math.floor(Math.random() * wordsAndHints.length);
-//     //     const currentWord = wordsAndHints[currentIndex];
-//     //     document.getElementById('displayWord').textContent = currentWord.word;
-//     //     document.getElementById('hint').textContent  = currentWord.hint;
-//     //     wordScramble();
-//     // }
+function displayRandomWordAndHint() {
+    const randomIndex = Math.floor(Math.random() * wordsAndHints.length);
+    const selectedWordAndHint = wordsAndHints[randomIndex];
+    document.getElementById('displayWord').textContent = selectedWordAndHint.word;
+    document.getElementById('hint').textContent = selectedWordAndHint.hint;
+    originalWord = selectedWordAndHint.word;
+
 
 // validation for input box
     const inputForm = document.getElementById('inputForm');
@@ -55,19 +52,33 @@
                 console.log(`Displayed word: "${originalWord}"`); // Log the displayed word
 
             // check if guessed value is equal to displayed word
-                if (guess.toLowerCase === originalWord.toLowerCase){
+                if (guess.toLowerCase() === originalWord.toLowerCase()){
                     alert("You got it!");
-                } else {
+                    newRound();   
+                // } else if (guess === ''){
+                //     alert("Please enter valid word");
+                } else {         
                     alert("So close! Guess again");
                 }
-            // wordScramble();     scrambles another word after submitting
         });
-
-
-// scramble display word on page load
+}
+// get word to scramble on page load
+// scramble display word
     // select word displayed using DOM
     // add eventlistener to scramble word when page loads
-    displayWord.addEventListener('onload', wordScramble());
+    window.onload = function() {
+        displayRandomWordAndHint();
+        wordScramble();
+        document.getElementById('inputForm').reset();
+    };
 
 
-
+// reset game after round
+    // clear input box
+    // get new word and hint combo
+    // scramble display word
+    function newRound() {
+        document.getElementById('inputForm').reset();
+        displayRandomWordAndHint();
+        wordScramble();
+    }
