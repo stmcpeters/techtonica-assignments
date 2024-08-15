@@ -18,3 +18,13 @@ button:hover {
   background: purple;
   color: #fff;
 }
+
+.front {
+  width: 80px;
+  height: 100px;
+}
+
+.back {
+  width: 80px;
+  height: 100px;
+}
