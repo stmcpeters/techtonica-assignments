@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import SingleCard from './SingleCard';
 
 
 // stored outside component because card images won't change
@@ -39,15 +40,10 @@ function App() {
       <button onClick={shuffleCards}>New Game</button>
       {/* creates grid for cards to be displayed */}
       <div className='card-grid'>
-        {/* for every card, we want the unique key value */}
+        {/* for every card, run the function SingleCard using unique card ids*/}
+        {/* initializing props to be exported from App to SingleCard */}
         {cards.map(card => (
-          <div className="card" key={card.id}>
-            {/* setting display of front and back of cards */}
-            <div>
-              <img className="front" src={card.src} alt="front of card" />
-              <img className="back" src='/img/cover.jpg' alt="back of card" />
-            </div>
-          </div>
+          <SingleCard  key={card.id} card={card}/>
         ))}
       </div>
     </div>
