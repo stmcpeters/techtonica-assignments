@@ -1,5 +1,4 @@
-/*  find google font */
-
+/*  google font */
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Quicksand:wght@300..700&display=swap');
 
 
@@ -21,8 +20,3 @@ p {
   display: inline-block;
   margin: 0px 20px;
 }
-
-/* p {
-  font-family: sans-serif;
-
-} */
