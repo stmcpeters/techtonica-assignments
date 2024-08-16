@@ -3,7 +3,10 @@ import './SingleCard.css'
 export default function SingleCard({ card, handleChoice, flipped}) {
 
   const handleClick = () => {
+    // prevents other choices from being made when disabled
+    if(!disabled){
     handleChoice(card);
+    }
   }
 
   return (
