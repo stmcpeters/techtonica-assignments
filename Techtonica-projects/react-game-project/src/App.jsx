@@ -6,7 +6,7 @@ import SingleCard from './SingleCard';
 // stored outside component because card images won't change
 // created match property, if cards match property will change to true
 const cardImages= [
-  {"src" : "/img/bear.jpg", matched: false},
+  {"src" : "/img/grizzly-bear.jpg", matched: false},
   {"src" : "/img/bird.jpg", matched: false},
   {"src" : "/img/giraffe.jpg", matched: false},
   {"src" : "/img/rabbit.jpg", matched: false},
@@ -44,6 +44,9 @@ function App() {
       setCards(shuffledCards)
       // sets new state for number of turns user has taken
       setTurns(0)
+      // resets user choices of cards to null
+      setChoiceOne(null)
+      setChoiceTwo(null)
   }
   // console.log(cards, turns)   test to see if cards are shuffled in console (not next to each other)
 
@@ -111,10 +114,20 @@ function App() {
     setDisabled(false);
   }
 
+
+  // start new game automatically
+  useEffect(() => {
+    // this function starts the game (shuffles cards to begin)
+    shuffleCards();
+  }, [])
+
+
+
   return (
     <div className='App'>
       <h1>Wild Pairs</h1>
       <button onClick={shuffleCards}>New Game</button>
+      <p>Turns: {turns}</p>
       {/* creates grid for cards to be displayed */}
       <div className='card-grid'>
         {/* for every card, run the function SingleCard using unique card ids*/}
@@ -131,6 +144,8 @@ function App() {
           />
         ))}
       </div>
+      {/* displays number of turns user has taken */}
+      {/* <p>Turns: {turns}</p> */}
     </div>
   )
 }
