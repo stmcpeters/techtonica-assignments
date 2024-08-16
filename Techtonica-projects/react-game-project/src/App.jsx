@@ -1,25 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import SingleCard from './SingleCard';
 
 
 // stored outside component because card images won't change
+// created match property, if cards match property will change to true
 const cardImages= [
-  {"src" : "/img/bear.jpg"},
-  {"src" : "/img/bird.jpg"},
-  {"src" : "/img/giraffe.jpg"},
-  {"src" : "/img/rabbit.jpg"},
-  {"src" : "/img/koala.jpg"},
-  {"src" : "/img/lion.jpg"}
+  {"src" : "/img/bear.jpg", matched: false},
+  {"src" : "/img/bird.jpg", matched: false},
+  {"src" : "/img/giraffe.jpg", matched: false},
+  {"src" : "/img/rabbit.jpg", matched: false},
+  {"src" : "/img/koala.jpg", matched: false},
+  {"src" : "/img/lion.jpg", matched: false}
 ]
 
 
 function App() {
   // creating and setting initial states
   // initial state of cards (displaying none until new game button is clicked)
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState([])
   // initial state of turns user has taken - starting at zero
-    const [turns, setTurns] = useState(0);
+    const [turns, setTurns] = useState(0)
 
   // creating and setting initial states for user choices 
     const [choiceOne, setChoiceOne] = useState(null)
@@ -37,7 +38,7 @@ function App() {
       // sets new state as shuffled cards after shuffling
       setCards(shuffledCards)
       // sets new state for number of turns user has taken
-      setTurns(0);
+      setTurns(0)
   }
   // console.log(cards, turns)   test to see if cards are shuffled in console (not next to each other)
 
@@ -47,9 +48,59 @@ function App() {
     // choiceOne's initial state value is null(false)
     // if choiceOne has no value, we want to update the state passing a chosen card's value
     // if choiceOne has a value already, we want to update the state of choiceTwo passing a chosen card's value
-    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
   }
 
+  // // compare chosen cards when both choices have card values
+  useEffect(() => {
+    // checks choices have values
+    if(choiceOne && choiceTwo){
+
+      // compares src properties of cards
+      if(choiceOne.src === choiceTwo.src){
+        console.log("It's a match!");
+        // changes state of card to true (when matched)
+        setCards(prevCards => {
+          // iterates over each card
+          return prevCards.map(card => {
+            // checks if the card's src === a choice (either bc they match)
+            if(card.src === choiceTwo.src){
+              // returns object of all card properties and changes the state of cards with matching srcs to true
+              return {...card, matched: true};
+            } else {
+              // if cards don't match return card untouched
+              return card;
+            }
+          })
+        })
+        resetTurn();
+      // if src doesn't match
+      } else {
+        console.log('Not a match! Try again');
+        resetTurn();
+      }
+    }
+  }, [choiceOne, choiceTwo])
+
+  console.log(cards);
+  
+  // const compareCards(choiceOne, choiceTwo) {
+  //   if (choiceOne[card]) && choiceTwo[card]) {
+  //     if(choiceOne[card].src === choiceTwo[card].src) {
+  //       console.log('match!');
+  //     } else {
+  //       console.log('not a match!');
+  //     }
+  //   } 
+  // }
+
+
+  // reset choices and increase user turn by 1
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns(prevTurns => prevTurns + 1);
+  }
 
   return (
     <div className='App'>
