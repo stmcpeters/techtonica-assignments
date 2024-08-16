@@ -127,6 +127,7 @@ function App() {
     <div className='App'>
       <h1>Wild Pairs</h1>
       <button onClick={shuffleCards}>New Game</button>
+      {/* displays number of turns user has taken */}
       <p>Turns: {turns}</p>
       {/* creates grid for cards to be displayed */}
       <div className='card-grid'>
@@ -144,8 +145,6 @@ function App() {
           />
         ))}
       </div>
-      {/* displays number of turns user has taken */}
-      {/* <p>Turns: {turns}</p> */}
     </div>
   )
 }
