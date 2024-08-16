@@ -1,6 +1,6 @@
 import './SingleCard.css'
 
-export default function SingleCard({ card, handleChoice}) {
+export default function SingleCard({ card, handleChoice, flipped}) {
 
   const handleClick = () => {
     handleChoice(card);
@@ -9,7 +9,8 @@ export default function SingleCard({ card, handleChoice}) {
   return (
     <div className="card">
       {/* setting display of front and back of cards */}
-        <div>
+        {/* checks value of flipped prop, if true has flipped class, false is empty string */}
+        <div className={flipped ? "flipped" : ""}>
           <img className="front" src={card.src} alt="front of card" />
           <img className="back" src='/img/cover.jpg' alt="back of card" onClick={handleClick} />
         </div>

@@ -26,6 +26,11 @@ function App() {
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
 
+  // setting initial state to false, allows you to chose cards
+    const [disabled, setDisabled] = useState(false)
+
+
+
   // shuffle cards
   const shuffleCards = () => {
     // creates copy of card images and duplicates so theres 2 of each (to match up)
@@ -42,6 +47,9 @@ function App() {
   }
   // console.log(cards, turns)   test to see if cards are shuffled in console (not next to each other)
 
+
+
+
   // handle user choice
   const handleChoice = (card) => {
     // checking if the choice is the first or second
@@ -51,14 +59,20 @@ function App() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
   }
 
+
+
+
   // // compare chosen cards when both choices have card values
   useEffect(() => {
+
     // checks choices have values
     if(choiceOne && choiceTwo){
-
+      // disables other cards from being flipped until comparing 2 chosen cards or reset has finished
+      setDisabled(true);
+      
       // compares src properties of cards
       if(choiceOne.src === choiceTwo.src){
-        console.log("It's a match!");
+        // console.log("It's a match!");
         // changes state of card to true (when matched)
         setCards(prevCards => {
           // iterates over each card
@@ -76,30 +90,25 @@ function App() {
         resetTurn();
       // if src doesn't match
       } else {
-        console.log('Not a match! Try again');
-        resetTurn();
+        // console.log('Not a match! Try again');
+        // sets delay of 1000ms (1sec) before resetting cards when they dont match
+        setTimeout(() => resetTurn(), 1000)
+        }
       }
-    }
-  }, [choiceOne, choiceTwo])
+  }, [choiceOne, choiceTwo]);
 
-  console.log(cards);
-  
-  // const compareCards(choiceOne, choiceTwo) {
-  //   if (choiceOne[card]) && choiceTwo[card]) {
-  //     if(choiceOne[card].src === choiceTwo[card].src) {
-  //       console.log('match!');
-  //     } else {
-  //       console.log('not a match!');
-  //     }
-  //   } 
-  // }
+  // console.log(cards); // shows props of cards
+
+
 
 
   // reset choices and increase user turn by 1
+  // setting disabled to false allows cards to be clicked again
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns(prevTurns => prevTurns + 1);
+    setDisabled(false);
   }
 
   return (
@@ -115,6 +124,10 @@ function App() {
             key={card.id} 
             card={card}
             handleChoice={handleChoice}
+            // setting conditions for when a card should be flipped
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+            // going to be false only when 2 cards have been chosen
+            disabled={disabled}
           />
         ))}
       </div>
