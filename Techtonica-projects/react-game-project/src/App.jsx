@@ -69,7 +69,7 @@ function App() {
     if(choiceOne && choiceTwo){
       // disables other cards from being flipped until comparing 2 chosen cards or reset has finished
       setDisabled(true);
-      
+
       // compares src properties of cards
       if(choiceOne.src === choiceTwo.src){
         // console.log("It's a match!");
@@ -113,7 +113,7 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Memory Game</h1>
+      <h1>Wild Pairs</h1>
       <button onClick={shuffleCards}>New Game</button>
       {/* creates grid for cards to be displayed */}
       <div className='card-grid'>
