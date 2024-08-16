@@ -15,8 +15,8 @@ button {
 }
 
 button:hover {
-  background: purple;
-  color: #fff;
+  background: white;
+  color: black;
 }
 
 /* card grid */
