@@ -14,12 +14,22 @@
 
 /* front of card - the image */
 
-/* initial state, places cards on top of each other and rotates image card on Y axis, hiding it and showing back of card cover only  */
+/* initial state, places cards on top of each other and rotates image card 
+    on Y axis, hiding it and showing back of card cover only  */
 .card .front {
   transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
   position: absolute;
 }
-/* when img has flipped class, this undoes rotation of img card, showing img and hiding cover underneath */
+/* when img card has flipped class, this undoes initial rotation of img card,
+    showing img and hiding cover underneath */
 .flipped .front {
   transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+/* back of card - cover */
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0s;
 }
