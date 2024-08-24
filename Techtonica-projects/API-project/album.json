@@ -1,7 +1,96 @@
-{
-  "id": 1,
+[
+  {
   "title": "Late Registration",
   "artist": "Kanye West",
   "genre": "Hip-Hop/Rap",
-  "release-year": 2005
+  "year": 2005
+},
+{
+  "title": "B'Day",
+  "artist": "Beyoncé",
+  "genre": "R&B",
+  "year": 2006
+},
+{
+  "title": "Good Kid, M.A.A.D City",
+  "artist": "Kendrick Lamar",
+  "genre": "Hip-Hop/Rap",
+  "year": 2012
+},
+{
+  "title": "Operation: Doomsday",
+  "artist": "MF DOOM",
+  "genre": "Hip-Hop/Rap",
+  "year": 1999
+},
+{
+  "title": "1991",
+  "artist": "Azealia Banks",
+  "genre": "Hip-Hop/Rap",
+  "year": 2012
+},
+{
+  "title": "The Genie of the Lamp",
+  "artist": "Mac Dre",
+  "genre": "Hip-Hop/Rap",
+  "year": 2004
+},
+{
+
+  "title": "Pink Friday",
+  "artist": "Nicki Minaj",
+  "genre": "Hip-Hop/Rap",
+  "year": 2010
+},
+{
+
+  "title": "Once Upon a Time",
+  "artist": "Donna Summers",
+  "genre": "Disco",
+  "year": 1977
+},
+{
+  "title": "Section.80",
+  "artist": "Kendrick Lamar",
+  "genre": "Hip-Hop/Rap",
+  "year": 2011
+},
+{
+  "title": "Cowboy Carter",
+  "artist": "Beyoncé",
+  "genre": "Country",
+  "year": 2024
+},
+{
+  "title": "Channel Orange",
+  "artist": "Frank Ocean",
+  "genre": "R&B",
+  "year": 2012
+},
+{
+  "title": "Blonde",
+  "artist": "Frank Ocean",
+  "genre": "R&B",
+  "year": 2016
+},
+{
+  "title": "But You Caint Use My Phone",
+  "artist": "Erykah Badu",
+  "genre": "R&B",
+  "year": 2015
+},
+{
+  "title": "Earth, Wind & Fire",
+  "artist": "Earth, Wind & Fire",
+  "genre": "Soul",
+  "year": 1971
+},
+{
+  "title": "La La Means I Love You",
+  "artist": "The Delfonics",
+  "genre": "Soul",
+  "year": 1968
 }
+]
+
+
