@@ -1,25 +1,42 @@
+// import express so you're able to use
 import express from 'express';
-import cors from 'cors';
-import albums from './albums.js';
-import pkg from 'pg';
+// translates the entire body portion of an incoming request stream into human readable info
+import bodyParser from 'body-parser';
+// import cors from 'cors';
+// import albums from './albumData.js';
+// import pkg from 'pg';
 
+// import routes
+import albumRoutes from './routes/albums.js';
 
+// initialize express application
 const app = express();
+// specifies port of the app backend
 const PORT = 5001;
 
-// config cors middleware
-app.use(cors());
+//initialize bodyParser to use
+app.use(bodyParser.json());
 
-const { Pool } = pkg;
+// set starting path for all routes
+app.use('/albums', albumRoutes);
 
-const db = new Pool({
-  user: 'username',
-  host: 'localhost',
-  database: 'database-name',
-  password: 'password',
-  port: 5432,
-});
+// GET request route (path we're expecting that request '/' is homepage, (request,response) callback function)
+app.get('/', (req, res) => res.send('Hi from homepage'));
 
+// // config cors middleware
+// app.use(cors());
+
+// const { Pool } = pkg;
+
+// const db = new Pool({
+//   user: 'username',
+//   host: 'localhost',
+//   database: 'database-name',
+//   password: 'password',
+//   port: 5432,
+// });
+
+// allows app to listen for incoming requests
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port: http://localhost:${PORT}`);
 });
