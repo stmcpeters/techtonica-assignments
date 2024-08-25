@@ -14,8 +14,10 @@ const app = express();
 // specifies port of the app backend
 const PORT = 5001;
 
-//initialize bodyParser to use
+//initialize bodyParser to use - makes incoming response readable
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 // set starting path for all routes
 app.use('/albums', albumRoutes);
@@ -37,6 +39,6 @@ app.get('/', (req, res) => res.send('Hi from homepage'));
 // });
 
 // allows app to listen for incoming requests
-app.listen(PORT, () => {
+var server = app.listen(PORT, () => {
   console.log(`Server is running on port: http://localhost:${PORT}`);
 });
