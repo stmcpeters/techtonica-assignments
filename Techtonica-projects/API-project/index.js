@@ -12,7 +12,7 @@ import albumRoutes from './routes/albums.js';
 // initialize express application
 const app = express();
 // specifies port of the app backend
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 //initialize bodyParser to use - makes incoming response readable
 app.use(bodyParser.json());
