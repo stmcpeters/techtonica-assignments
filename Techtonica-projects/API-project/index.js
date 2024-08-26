@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
-// set starting path for all routes 
+// set starting path for all routes using hardcoded data
 // app.use('/albums', albumRoutes);
 
 
@@ -38,13 +38,29 @@ const dbConfig = {
   host: process.env.DB_HOST,
   database: process.env.DB_DATABASE,
   password: process.env.DB_PASSWORD,
-  port: parseInt(process.env.DB_PORT),
+  port: process.env.DB_PORT,
 };
 
 const db = new Pool(dbConfig);
 
 
-// function to check connection
+// get all from albums table database  ------BROKEN says album data doesnt exist
+app.get('/albums', async (req, res) => {
+  try {
+    const result = await db.query('SELECT * FROM testing;');
+    res.json(result.rows);
+    console.log('connected to albums database');
+  } catch (error) {
+    console.error('error fetching testing table: ', error);
+    res.status(500).json({ message: 'Failed to fetch testing table' });
+  }
+});
+
+
+
+
+
+// function to check connection to database
 // async function testConnection() {
 //   try {
 //     const client = await db.connect();
@@ -63,19 +79,6 @@ const db = new Pool(dbConfig);
 
 // testConnection().catch(console.log);
 
-
-
-// get all from albums table database  ------BROKEN says album data doesnt exist
-// app.get('/albums', async (req, res) => {
-//   try {
-//     const result = await db.query('SELECT * FROM albums.albums_data');
-//     res.json(result.rows);
-//     console.log('connected to database');
-//   } catch (error) {
-//     console.error('error fetching albums: ', error);
-//     res.status(500).json({ message: 'Failed to fetch albums' });
-//   }
-// });
 
 
 
