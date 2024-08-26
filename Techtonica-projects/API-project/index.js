@@ -68,7 +68,7 @@ const db = new Pool(dbConfig);
 // get all from albums table database  ------BROKEN says album data doesnt exist
 // app.get('/albums', async (req, res) => {
 //   try {
-//     const result = await db.query('SELECT * FROM albums_data;');
+//     const result = await db.query('SELECT * FROM albums.albums_data');
 //     res.json(result.rows);
 //     console.log('connected to database');
 //   } catch (error) {
