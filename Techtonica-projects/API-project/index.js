@@ -88,6 +88,43 @@ app.get('/albums/:id', async (req, res) => {
   }
 })
 
+// delete - delete albums by ID
+app.delete('/albums/:id', async (req, res) => {
+  try {
+    // initalizes id you're searching for
+    const { id } = req.params;
+    // query to delete album from database using ID
+    const result = await db.query(`DELETE FROM albums_data WHERE id = $1`, [id]);
+    // message to confirm new album has been added to database
+    res.send(`Album with the id ${id} has been deleted from the database`);
+  } catch (error) {
+      console.error(`Cannot find album matching id: ${id}: `, error);
+  }
+})
+
+ // demo example
+// {
+//   "title": "1992 Deluxe",
+//   "artist": "Princess Nokia",
+//   "genre": "Hip-Hop/Rap",
+//   "year": 2017
+// }
+
+// patch - update album details by ID
+app.patch('/albums/:id', async (req, res) => {
+  try {
+    // initalizes id you're searching for
+    const { id } = req.params;
+    // gets properties to be updated
+    const { title, artist, genre, year } = req.body;
+    // query to update album by specified ID
+    const result = await db.query(`UPDATE albums_data SET title=$1, artist=$2, genre=$3, year=$4 WHERE id = $5`, [title, artist, genre, year, id]);
+    // message to confirm album details have been updated
+    res.send(`Album with the id ${id} has been updated in the database`);
+  } catch (error) {
+      console.error(`Cannot find album matching id: `, error);
+  }
+})
 
 
 // allows app to listen for incoming requests
