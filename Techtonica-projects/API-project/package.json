@@ -7,8 +7,8 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Steph McPeters-Esparza",
+  "license": "MIT",
   "description": "",
   "dependencies": {
     "body-parser": "^1.20.2",
