@@ -2,12 +2,14 @@
 import express from 'express';
 // translates the entire body portion of an incoming request stream into human readable info
 import bodyParser from 'body-parser';
-// import cors from 'cors';
-// import albums from './albumData.js';
-// import pkg from 'pg';
+import cors from 'cors';
+// import albums from './albumData.js';     - using hardcoded data
+// pool manages psql database
+import pkg from 'pg';
+const { Pool } = pkg;
 
-// import routes
-import albumRoutes from './routes/albums.js';
+// import routes for hard coded data
+// import albumRoutes from './routes/albums.js';
 
 // initialize express application
 const app = express();
@@ -19,26 +21,65 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 
-// set starting path for all routes
-app.use('/albums', albumRoutes);
+// set starting path for all routes 
+// app.use('/albums', albumRoutes);
 
-// GET request route (path we're expecting that request '/' is homepage, (request,response) callback function)
+
+// test connection to page
+//GET request route (path we're expecting that request '/' is homepage, (request,response) callback function)
 app.get('/', (req, res) => res.send('Hi from homepage'));
 
 // // config cors middleware
-// app.use(cors());
+app.use(cors());
 
-// const { Pool } = pkg;
 
-// const db = new Pool({
-//   user: 'username',
-//   host: 'localhost',
-//   database: 'database-name',
-//   password: 'password',
-//   port: 5432,
+const dbConfig = {
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: parseInt(process.env.DB_PORT),
+};
+
+const db = new Pool(dbConfig);
+
+
+// function to check connection
+// async function testConnection() {
+//   try {
+//     const client = await db.connect();
+//     console.log('database connection');
+
+//     const result = await client.query('SELECT * FROM albums_data;');
+//     console.log('Getting query from albums_data table');
+//     res.json(result.rows);
+
+//     await client.release();
+//     console.log('database connection released');
+//   } catch (error) {
+//     console.log('database not connected: ', error);
+//   }
+// }
+
+// testConnection().catch(console.log);
+
+
+
+// get all from albums table database  ------BROKEN says album data doesnt exist
+// app.get('/albums', async (req, res) => {
+//   try {
+//     const result = await db.query('SELECT * FROM albums_data;');
+//     res.json(result.rows);
+//     console.log('connected to database');
+//   } catch (error) {
+//     console.error('error fetching albums: ', error);
+//     res.status(500).json({ message: 'Failed to fetch albums' });
+//   }
 // });
 
+
+
 // allows app to listen for incoming requests
-var server = app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port: http://localhost:${PORT}`);
 });
