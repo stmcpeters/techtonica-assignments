@@ -7,6 +7,9 @@ import cors from 'cors';
 // pool manages psql database
 import pkg from 'pg';
 const { Pool } = pkg;
+// import dotenv to use .env file info
+import dotenv from 'dotenv';
+dotenv.config();
 
 // import routes for hard coded data
 // import albumRoutes from './routes/albums.js';
@@ -14,25 +17,24 @@ const { Pool } = pkg;
 // initialize express application
 const app = express();
 // specifies port of the app backend
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5002;
 
 //initialize bodyParser to use - makes incoming response readable
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-var urlencodedParser = bodyParser.urlencoded({extended: false});
+// var urlencodedParser = bodyParser.urlencoded({extended: false});
+// config cors middleware
+app.use(cors());
 
 // set starting path for all routes using hardcoded data
 // app.use('/albums', albumRoutes);
-
 
 // test connection to page
 //GET request route (path we're expecting that request '/' is homepage, (request,response) callback function)
 app.get('/', (req, res) => res.send('Hi from homepage'));
 
-// // config cors middleware
-app.use(cors());
 
-
+// setting up database
 const dbConfig = {
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -40,45 +42,51 @@ const dbConfig = {
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
 };
+// console.log(process.env);
 
 const db = new Pool(dbConfig);
 
+/////////////////////// ALL ROUTES ////////////////////////
 
-// get all from albums table database  ------BROKEN says album data doesnt exist
+// get all from albums table database
 app.get('/albums', async (req, res) => {
   try {
-    const result = await db.query('SELECT * FROM testing;');
+    const result = await db.query('SELECT * FROM albums_data;');
     res.json(result.rows);
     console.log('connected to albums database');
   } catch (error) {
-    console.error('error fetching testing table: ', error);
-    res.status(500).json({ message: 'Failed to fetch testing table' });
+    console.error('error fetching albums data: ', error);
+    res.status(500).json({ message: 'Failed to fetch albums data' });
   }
 });
 
+// post route to create new album
+app.post('/albums', async (req, res) => {
+  try {
+    // initalizes new post requested data
+    const { title, artist, genre, year } = req.body;
+    // query to insert new album into database
+    const result = await db.query(`INSERT INTO albums_data (title, artist, genre, year) VALUES ($1, $2, $3, $4)`, [title, artist, genre, year]);
+    // message to confirm new album has been added to database
+    res.send(`New album by ${artist} added to the database`);
+  } catch (error) {
+    console.error('Error creating new album: ', error);
+  }
+});
 
-
-
-
-// function to check connection to database
-// async function testConnection() {
-//   try {
-//     const client = await db.connect();
-//     console.log('database connection');
-
-//     const result = await client.query('SELECT * FROM albums_data;');
-//     console.log('Getting query from albums_data table');
-//     res.json(result.rows);
-
-//     await client.release();
-//     console.log('database connection released');
-//   } catch (error) {
-//     console.log('database not connected: ', error);
-//   }
-// }
-
-// testConnection().catch(console.log);
-
+// get - search albums by ID
+app.get('/albums/:id', async (req, res) => {
+  try{
+    // initalizes id you're searching for
+    const { id } = req.params;
+    // query to search for albums matching given id
+    const result = await db.query(`SELECT * FROM albums_data WHERE id = $1`, [id]);
+    // return album data as JSON
+    res.json(result.rows[0]);
+  } catch (error) {
+    console.error('Error fetching album: ', error);
+  }
+})
 
 
 
