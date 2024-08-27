@@ -2,6 +2,7 @@
   "name": "kc6---express-routes-on-the-eventbrite-api",
   "version": "1.0.0",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
@@ -12,6 +13,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.4"
