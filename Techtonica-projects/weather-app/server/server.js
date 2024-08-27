@@ -17,12 +17,33 @@ app.use(cors());
 dotenv.config();
 
 // setting port to display
-const PORT = 8080;
+const PORT = process.env.DB_PORT || 8080;
 
 // checking get connection
 app.get('/', (req, res) => {
   res.send('hello from the server');
   res.end();
+})
+
+// city variable
+const city = 'San Francisco';
+
+// fetching weather API
+app.get('/weather', async (req, res) => {
+  try {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.WEATHER_API_KEY}`;
+    const response = await fetch(url);
+
+    if(!response.ok) {
+      console.error(`Receiving HTTP error status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    res.send(data);
+
+  } catch (error) {
+    console.error('There was an error fetching weather data: ', error);
+  }
 })
 
 // server set up
