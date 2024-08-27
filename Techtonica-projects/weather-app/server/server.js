@@ -31,13 +31,15 @@ const city = 'San Francisco';
 // fetching weather API
 app.get('/weather', async (req, res) => {
   try {
+    // setting variable for weather API link
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.WEATHER_API_KEY}`;
+    // fetching weather data from API
     const response = await fetch(url);
-
+    // handles http errors
     if(!response.ok) {
       console.error(`Receiving HTTP error status: ${response.status}`);
     }
-
+    
     const data = await response.json();
     res.send(data);
 
