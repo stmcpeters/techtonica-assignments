@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [message, setMessage] = useState('');
+  // sets initial state of city to be updated
+  const [city, setCity] = useState('');
+  // sets initial state of weather data to be updated
+  const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    fetch('/api')
-      .then((res) => res.text())
-      .then((data) => setMessage(data))
+    fetch('/api/weather')
+      .then((res) => res.json())
+      .then((data) => setData(data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -17,16 +20,16 @@ function App() {
       {/* <h1>{message}</h1> */}
       <h1>Weather App</h1>
       <form>
+        // creates input text box for user to enter a city name
           <input 
           type="text"
-          placeholder="Enter city here"
-          name="Enter city"
+          placeholder="Enter city name"
+          label="city-name"
+          // sets initial state of city to be changed with user input
+          value={city}
           />
-        <input
-          className='submit-btn'
-          type="submit"
-          value="Enter"
-        />
+        // button to submit form
+        <button type="submit">Get Weather</button>
       </form>
     </div>
   )
