@@ -20,7 +20,6 @@ function App() {
       {/* <h1>{message}</h1> */}
       <h1>Weather App</h1>
       <form>
-        // creates input text box for user to enter a city name
           <input 
           type="text"
           placeholder="Enter city name"
@@ -28,7 +27,6 @@ function App() {
           // sets initial state of city to be changed with user input
           value={city}
           />
-        // button to submit form
         <button type="submit">Get Weather</button>
       </form>
     </div>
