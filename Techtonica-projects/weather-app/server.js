@@ -20,15 +20,20 @@ dotenv.config();
 const PORT = process.env.DB_PORT || 8080;
 
 // checking get connection
-app.get('/', (req, res) => {
-  res.send('hello from the server');
-  res.end();
+app.get('/api', (req, res) => {
+  res.send('hello world from the server');
 })
+
+// endpoint for route/api from server.js to connect to front end
+// app.get('/api', (req, res) => {
+//   res.send('hello from express JS');
+//   res.end();
+// })
 
 // city variable
 const city = 'San Francisco';
 
-// fetching weather API
+// fetching weather API /weather
 app.get('/weather', async (req, res) => {
   try {
     // setting variable for weather API link
@@ -39,7 +44,7 @@ app.get('/weather', async (req, res) => {
     if(!response.ok) {
       console.error(`Receiving HTTP error status: ${response.status}`);
     }
-    
+
     const data = await response.json();
     res.send(data);
 
