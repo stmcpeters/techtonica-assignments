@@ -13,18 +13,17 @@ function findLargerNumber(num1, num2) {
 /*  WEDNESDAY
 Write a JavaScript function that takes two arrays as input and returns a new array that contains all elements from both input arrays. Use the spread operator (...) to achieve this. */
 
-//input: arr1, arr2
-// output: arr1arr2
+// input: arr1 arr2
+// output: [arr1arr2]
 
-const arr1 = [1,2,3];
-const arr2 = [4,5,6];
+const arr1 = ['hi',4];
+const arr2 = [2, {'greeting':'goodbye'}];
 
 function combineArrays(arr1, arr2) {
-  const combinedArrs = [...arr1,...arr2];
-  return combinedArrs;
+  return [...arr1, ...arr2];
 }
 
-//console.log(combineArrays(arr1,arr2)); // output: [1,2,3,4,5,6]
+console.log(combineArrays(arr1, arr2)); // output: ['hi', 4, 2, {'greeting':'goodbye'}]
 
 
 /* THURSDAY
