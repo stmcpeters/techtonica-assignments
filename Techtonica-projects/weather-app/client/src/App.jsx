@@ -14,7 +14,20 @@ function App() {
 
   return (
     <div>
-      <h1>{message}</h1>
+      {/* <h1>{message}</h1> */}
+      <h1>Weather App</h1>
+      <form>
+          <input 
+          type="text"
+          placeholder="Enter city here"
+          name="Enter city"
+          />
+        <input
+          className='submit-btn'
+          type="submit"
+          value="Enter"
+        />
+      </form>
     </div>
   )
 }
