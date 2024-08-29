@@ -30,28 +30,29 @@ app.get('/api', (req, res) => {
 //   res.end();
 // })
 
-// city variable
-const city = 'San Francisco';
 
-// fetching weather API /weather
-app.get('/weather', async (req, res) => {
-  try {
-    // setting variable for weather API link
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.WEATHER_API_KEY}`;
-    // fetching weather data from API
-    const response = await fetch(url);
-    // handles http errors
-    if(!response.ok) {
-      console.error(`Receiving HTTP error status: ${response.status}`);
+// fetching weather from API
+
+  app.get('/weather', async (req, res) => {
+    //sets city equal to requested city entered
+    const city = req.query.city || 'Los Angeles'; //sets default city to SF
+    try {
+      // setting variable for weather API link
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_API_KEY}&units=imperial`;
+      // fetching weather data from API
+      const response = await fetch(url);
+      // handles http errors
+      if(!response.ok) {
+        console.error(`Receiving HTTP error status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      res.send(data);
+
+    } catch (error) {
+      console.error('There was an error fetching weather data: ', error);
     }
-
-    const data = await response.json();
-    res.send(data);
-
-  } catch (error) {
-    console.error('There was an error fetching weather data: ', error);
-  }
-})
+  })
 
 // server set up
 app.listen(PORT, () => {
