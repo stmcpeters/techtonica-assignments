@@ -1,7 +1,7 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 200;
 
   color-scheme: light dark;
   color: black;
@@ -10,7 +10,7 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: greyscale;
 }
 
 
@@ -28,13 +28,17 @@ h1 {
 }
 
 input {
-  background-color: black;
+  background-color: lightgrey;
+  color: black;
+  border: 1px solid;
+  border-radius: 4.5px;
+  padding: 0.5em 0.5em;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.8em 1.2em;
   font-size: 0.5em;
   font-weight: 500;
   font-family: inherit;
@@ -44,7 +48,9 @@ button {
   margin-left: 10px
 }
 button:hover {
-  border-color: white;
+  border-color: black;
+  background-color: white;
+  color: black;
 }
 
 button:focus,
