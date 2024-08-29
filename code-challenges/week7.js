@@ -23,15 +23,27 @@ function combineArrays(arr1, arr2) {
   return [...arr1, ...arr2];
 }
 
-console.log(combineArrays(arr1, arr2)); // output: ['hi', 4, 2, {'greeting':'goodbye'}]
+// console.log(combineArrays(arr1, arr2)); // output: ['hi', 4, 2, {'greeting':'goodbye'}]
 
 
 /* THURSDAY
 Write a JavaScript function that takes an array of numbers as input and returns a new array with all duplicates removed. Use the Set object to achieve this. */
 
-function removeDuplicates() {
+const arr3 = [1,2,2,3,4,5,5]
 
+const arr4 = [1,2,3,4,4,5,6,7,7,8,9,10]
+
+function removeDuplicates(array) {
+  // initialize set object
+  const set = new Set();
+  // iterate thru array
+  for (let i = 0; i < array.length; i++) {
+    // add each element onto set
+      set.add(array[i]);
+  }
+  // convert back to array instead of object
+  return [...set];
 }
 
-//console.log(removeDuplicates());
-
+console.log(removeDuplicates(arr3)); // [1,2,3,4,5]
+console.log(removeDuplicates(arr4));
