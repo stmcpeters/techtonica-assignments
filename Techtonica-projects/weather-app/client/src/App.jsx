@@ -72,7 +72,12 @@ function App() {
         {weatherData ? (
           <>
             {/* displays weather data name from API */}
-              <h2>{weatherData.name}</h2>
+              <h2>
+                {/* displays weather icon depending on the weather description */}
+                <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} />
+                <br></br>
+                {weatherData.name}
+              </h2>
             {/* displays temp from API */}
               <p>Temperature: {weatherData.main.temp} &deg;F</p>
             {/* displays description from API */}
