@@ -21,13 +21,28 @@ function App() {
           .catch((err) => console.log(err));
     }, []);
 
+  // handles validation - entering numbers or empty strings vs valid city
+    const handleValidation = () => {
+      if(city.length === 0 || !Object.is(parseFloat(city), NaN)) {
+        // alert('Please enter a valid city!');
+        return false;
+      } else {
+      return true;
+    }
+  }
+
   // handles what to do when submit button is clicked
     const handleSubmit = (event) => {
       // prevents default submission behaviors like refreshing/redirecting page
       event.preventDefault();
+      if(handleValidation()) {
       // runs fetchWeather() that gets data from API
-      fetchWeather();
+        fetchWeather();
+       } else {
+        alert('Please enter a valid city!')
+       }
     }
+    
 
   // fetches weather data from backend
     const fetchWeather = async () => {
