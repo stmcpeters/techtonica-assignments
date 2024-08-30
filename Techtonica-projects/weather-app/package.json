@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "concurrently \"node server.js\" \"npm --prefix client run dev\"",
+    "dev": "concurrently \"node server.js\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build"
   },
   "keywords": [],
   "author": "Steph McPeters-Esparza",
@@ -18,5 +19,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "nodemon": "^3.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
