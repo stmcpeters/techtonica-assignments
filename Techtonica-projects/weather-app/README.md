@@ -57,8 +57,7 @@ For example: <br>
   - Fetches weather data for a specified city.
   - Query parameter: city (optional, defaults to "San Francisco").
 ### Stretch Goals
-- concurrent loading of frontend and backend
-- creating folder for backend files (similar to client folder for frontend)
+- more organization with file structure => creating separate folders for frontend and backend
 ### Contributing
 For any questions, comments, or contributions, please reach out to me via email or open an issue on the GitHub repository.
 ### License
