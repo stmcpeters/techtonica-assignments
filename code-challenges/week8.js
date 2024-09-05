@@ -13,12 +13,12 @@
 
   // }
 
-  let randomArr = [];
-  for (let i = 0; i < 10; i++){
-    randomArr.push(Math.random() * 100);
-    //randomArr;
-  }
-  console.log(randomArr);
+  // let randomArr = [];
+  // for (let i = 0; i < 10; i++){
+  //   randomArr.push(Math.random() * 100);
+  //   //randomArr;
+  // }
+  // console.log(randomArr);
 
 
 // round half of numbers up using Math.ceil
@@ -45,3 +45,20 @@
 
 // 🗓️Thursday: Working with Arrays & Objects
 // Create a function named filterObjects that takes two arguments: an array of objects (data) and a string representing a property name (propertyName). The function should return a new array containing only the objects from the original array whose value for the specified property matches the provided value. If no objects match the criteria, the function should return an empty array.
+
+//input: array of objects, propName (age, name, hobby), value passed param and need to find if there's a key paired
+
+let data = [
+  {name: 'bob', age: 20, hobby: 'skating'},
+  {name: 'joe', age: 36, hobby: 'stamp collecting'}, 
+  {name: 'ken', age: 41, hobby: 'painting'}];
+
+function findAge(data, propName, value){
+  return data.filter((obj) => obj[`${propName}`] === value);
+}
+
+console.log(findAge(data, 'name', 'bob'));
+console.log(findAge(data, 'age', 41));
+console.log(findAge(data, 'name', 'matt'));
+
+
