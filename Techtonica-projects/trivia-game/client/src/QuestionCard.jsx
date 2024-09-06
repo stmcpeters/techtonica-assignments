@@ -9,9 +9,10 @@ const QuestionCard = (props) => {
       <div className="question-text">{props.question.question}</div>
       {/* will hold and display buttons to answer */}
         <div className="answer-section">
-          {/* change state when clicked */}
-          <button>True</button>
-          <button>False</button>
+          {/* makes shallow copies of incorrect and correct answers (true or false) and creates buttons for each */}
+        {[...question.incorrect_answers, questions.correct_answer].map((answer, index) => (
+          <button key={index}>{answer}</button>
+        ))}
         </div>
     </div>
   )
