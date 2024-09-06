@@ -27,8 +27,9 @@
       // if no errors, parse response in JSON format
       const data = response.json();
       // testing to see if data has been collected
-      console.log("Received data: ", data)
-      setQuestions(data.questions);
+      console.log("Received data: ", data);
+      // displays data as an empty array if it doesn't work
+      setQuestions(data.results || []);
     } catch (error) {
       console.error(`Error fetching trivia: `, error);
     }
@@ -41,23 +42,33 @@
 
 
 // handle answers
-
+// if (choice === questions.correct_answers){
+//   setScore(prevScore => prevScore + 1)
+//   alert('Correct!');
+// } else {
+//   alert('Incorrect! Try again');
+// }
 
 
 
   return (
     <>
       <div className="Container">
+        {/* displays score */}
         <div className="display-score">Score: {score}</div>
-        {questions.map((question, index) => {
-          return <QuestionCard key={index} question={question} />
-        })}
+        {/* conditionally displays each question or loading message
+            if questions.length is 0 */}
+        {questions.length > 0 ? (
+          questions.map((question, index) => (
+            <QuestionCard key={index} question={question} />
+          ))
+        ) : (
+          <div>Loading questions...</div>
+        )}
       </div>
     </>
-  )
-}
+  );
+};
 
-
-// bonus: disables other buttons in row from being selected (1 at a time)
 
 export default Game
