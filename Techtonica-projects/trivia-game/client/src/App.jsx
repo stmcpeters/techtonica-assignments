@@ -29,6 +29,11 @@ useEffect(() => {
 }, []);
 
 
+// game logic
+// choosing right/wrong answers
+// track score - guessed correct vs # of total questions
+
+
 
 
 
@@ -36,9 +41,12 @@ useEffect(() => {
     <>
     {/* displays title */}
       <h1>Reel Trivia</h1>
-      {/* display play screen or trivia questions/answers */}
+      {/* conditionally display instructions/starter screen OR trivia gameplay */}
       {trivia ? (
-        <p>Question: {trivia.results[0].question}</p>
+        // display trivia question
+
+        // display trivia answers (in buttons?)
+
         // loading message to display when fetching data from API
       ) : <p>BRB..fetching trivia</p>}
     </>

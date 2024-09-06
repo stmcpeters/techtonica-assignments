@@ -9,6 +9,9 @@
   import cors from 'cors';
   app.use(cors());
 
+//imports hardcoded fakedata for testing
+import fakedata from './fakedata.js';
+
 // initializing port to display
   const PORT = 8080;
 
@@ -37,6 +40,14 @@
         console.error(`Oops! There was an error fetching trivia data: `, error);
       }
   })
+
+
+// create route to hardcoded data for testing 
+// importing to use fakedata at the top
+app.get('/api/data', (req, res) => {
+  res.json(fakedata);
+})
+
 
 // server set up - will display on specified port
   app.listen(PORT, () => {
