@@ -40,9 +40,15 @@
   }, []);
 
 
+// handle answers
+
+
+
+
   return (
     <>
       <div className="Container">
+        <div className="display-score">Score: {score}</div>
         {questions.map((question, index) => {
           return <QuestionCard key={index} question={question} />
         })}
