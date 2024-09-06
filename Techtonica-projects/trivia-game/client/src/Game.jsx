@@ -1,5 +1,7 @@
 // import hooks from react
   import { useState, useEffect } from "react";
+// import question card component that will display questions + selections
+  import QuestionCard from "./QuestionCard";
 
 // game component to load game, and hold question totals + scores
   const Game = (props) => {
