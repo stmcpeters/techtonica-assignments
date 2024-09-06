@@ -1,6 +1,40 @@
 // hardcoded data from trivia API for testing
 
-const fakedata = {"response_code":0,"results":[{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"In the movie Gremlins, after what time of day should you not feed Mogwai?","correct_answer":"Midnight","incorrect_answers":["Evening","Morning","Afternoon"]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"In &quot;Jurassic World&quot;, what is the name of the dinosaur that is a genetic hybrid?","correct_answer":"Indominus Rex","incorrect_answers":["Mosasaurus","Pteranodon","Tyrannosaurus Rex "]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"What is the orange and white bot&#039;s name in &quot;Star Wars: The Force Awakens&quot;?","correct_answer":"BB-8","incorrect_answers":["BB-3","AA-A","R2-D2"]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"Which animated movie was first to feature a celebrity as a voice actor?","correct_answer":"Aladdin","incorrect_answers":["Toy Story","James and the Giant Peach","The Hunchback of Notre Dame"]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"This movie contains the quote, &quot;Houston, we have a problem.&quot;","correct_answer":"Apollo 13","incorrect_answers":["The Right Stuff","Capricorn One","Marooned"]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"Which of the following is not the name of a &quot;Bond Girl&quot;? ","correct_answer":"Vanessa Kensington","incorrect_answers":["Pam Bouvier","Mary Goodnight","Wai Lin"]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"What was the title of the first Bond movie, released in 1962?","correct_answer":"Dr. No","incorrect_answers":["From Russia with Love","Goldfinger","Thunderball"]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"When does &quot;Rogue One: A Star Wars Story&quot; take place chronologically in the series?","correct_answer":"Between Episode 3 and 4","incorrect_answers":["After Episode 6","Before Episode 1","Between Episode 4 and 5"]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"In the movie &quot;Spaceballs&quot;, what are the Spaceballs attempting to steal from Planet Druidia?","correct_answer":"Air","incorrect_answers":["The Schwartz","Princess Lonestar","Meatballs"]},{"type":"multiple","difficulty":"easy","category":"Entertainment: Film","question":"Who starred as Bruce Wayne and Batman in Tim Burton&#039;s 1989 movie &quot;Batman&quot;?","correct_answer":"Michael Keaton","incorrect_answers":["George Clooney","Val Kilmer","Adam West"]}]}
+const fakedata = {
+  "response_code": 0,
+  "results": [
+      {
+          "type": "boolean",
+          "difficulty": "medium",
+          "category": "Entertainment: Film",
+          "question": "The color of the pills in the Matrix were Blue and Yellow.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+              "True"
+          ]
+      },
+      {
+          "type": "boolean",
+          "difficulty": "medium",
+          "category": "Entertainment: Film",
+          "question": "The Xenomorph from the science fiction film &quot;Alien&quot; has acidic blood.",
+          "correct_answer": "True",
+          "incorrect_answers": [
+              "False"
+          ]
+      },
+      {
+          "type": "boolean",
+          "difficulty": "medium",
+          "category": "Entertainment: Film",
+          "question": "Sean Connery wasn&#039;t in &quot;Indiana Jones and the Kingdom of the Crystal Skull&quot; because he found retirement too enjoyable.",
+          "correct_answer": "True",
+          "incorrect_answers": [
+              "False"
+          ]
+      }
+  ]
+}
 
 // exports the fakedata object
 export default fakedata;
