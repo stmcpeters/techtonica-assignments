@@ -57,8 +57,9 @@
   return (
     <>
       <div className="Container">
-        {/* displays score */}
-        <div className="display-score">Score: {score}</div>
+        {/* displays score out # of total questions */}
+        <div className="display-score">Score: {score}/{questions.length}</div>
+        {/* maps each question and answer to display */}
         {questions && questions.map((question, index) => (
           <QuestionCard key={index} question={question} />
         ))}

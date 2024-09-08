@@ -24,7 +24,7 @@ import fakedata from './fakedata.js';
   app.get('/trivia', async (req, res) => {
     try {
     // setting variable for trivia API
-      const url = `https://opentdb.com/api.php?amount=3&category=11&difficulty=medium&type=boolean`;
+      const url = `https://opentdb.com/api.php?amount=5&category=11&difficulty=medium&type=boolean`;
     // fetching trivia data from API
       const response = await fetch(url);
       // handles and displays HTTP errors
