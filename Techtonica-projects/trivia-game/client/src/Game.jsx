@@ -25,9 +25,9 @@
         }
 
       // if no errors, parse response in JSON format
-      const data = response.json();
+      const data = await response.json();
       // testing to see if data has been collected
-      console.log("Received data: ", data);
+      console.log("Received data: ", data.results);
       // displays data as an empty array if it doesn't work
       setQuestions(data.results || []);
     } catch (error) {
@@ -37,7 +37,10 @@
 
 // load game / fetches questions on page load
   useEffect(() => {
-    loadData()
+    const fetchData = async () => {
+      await loadData();
+    }
+    fetchData();
   }, []);
 
 
@@ -56,15 +59,9 @@
       <div className="Container">
         {/* displays score */}
         <div className="display-score">Score: {score}</div>
-        {/* conditionally displays each question or loading message
-            if questions.length is 0 */}
-        {questions.length > 0 ? (
-          questions.map((question, index) => (
-            <QuestionCard key={index} question={question} />
-          ))
-        ) : (
-          <div>Loading questions...</div>
-        )}
+        {questions && questions.map((question, index) => (
+          <QuestionCard key={index} question={question} />
+        ))}
       </div>
     </>
   );
