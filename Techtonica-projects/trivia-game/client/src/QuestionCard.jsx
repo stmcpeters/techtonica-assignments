@@ -10,7 +10,7 @@ const QuestionCard = ({ question }) => {
       {/* will hold and display buttons to answer */}
         <div className="answer-section">
           {/* makes shallow copies of incorrect and correct answers (true or false) and creates buttons for each */}
-        {[...question.incorrect_answers, question.correct_answer].map((answer, index) => (
+        {[question.correct_answer, question.incorrect_answers].map((answer, index) => (
           <button key={index}>{answer}</button>
         ))}
         </div>

@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     {/* displays title */}
-      <h1>Reel Trivia</h1>
+      <h1>🎞 Reel Trivia 🎥</h1>
       {/* conditionally display instructions/starter screen OR trivia gameplay */}
 
       <Game />
