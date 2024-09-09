@@ -31,16 +31,16 @@ import fakedata from './fakedata.js';
       if(!response.ok) {
         console.error(`Error! Receiving HTTP error status: ${response.status}`);
       }
-      // parses fetched response into JSON format
-        const data = await response.json();
-      // sends JSON data as a response to client side
-        res.json(data);
-    // catches errors and displays errors fetching trivia data from API
-      } catch (error) {
-        console.error(`Oops! There was an error fetching trivia data: `, error);
-      }
+      // if no errors, parse response in JSON format
+      const data = await response.json();
+      // testing to see if data has been collected
+      console.log("Received data: ", data.results);
+      // sends json data as a response to client side
+      res.json(data);
+    } catch (error) {
+      console.error(`Error fetching trivia: `, error);
+    }
   })
-
 
 // create route to hardcoded data for testing 
 // importing to use fakedata at the top
