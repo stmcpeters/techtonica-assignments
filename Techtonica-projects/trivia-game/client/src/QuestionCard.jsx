@@ -1,8 +1,10 @@
 // creates card component to hold question and options to select
 const QuestionCard = ({ question, onSelect, selectedAnswer }) => {
-
+  // handle answer selection
   const handleAnswerClick = (answer) => {
+    // check if the selected answer === correct answer
     const isCorrect = checkAnswer(answer, question.correct_answer);
+    // messages for right/wrong answers
     if(isCorrect) {
       alert('Correct! 🤩')
     } else {
