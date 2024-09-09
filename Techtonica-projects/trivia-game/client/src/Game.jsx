@@ -13,11 +13,13 @@
   // Initialize and set selectedAnswers state
     const [selectedAnswers, setSelectedAnswers] = useState({});
 
+    const [error, setError] = useState(null);
+
   // fetch API data from backend
     const loadData = async () => {
       try {
         // fetches trivia data from API (backend server)
-        //const response = await fetch('http://localhost:8080/trivia')
+        // const response = await fetch('http://localhost:8080/trivia')
         //fetches hardcoded trivia data for testing
         const response = await fetch('http://localhost:8080/api/data')
 
@@ -31,9 +33,10 @@
       // testing to see if data has been collected
       console.log("Received data: ", data.results);
       // displays data as an empty array if it doesn't work
-      setQuestions(data.results || []);
+      setQuestions(data.results);
     } catch (error) {
       console.error(`Error fetching trivia: `, error);
+      setError(error.message);
     }
   }
 
