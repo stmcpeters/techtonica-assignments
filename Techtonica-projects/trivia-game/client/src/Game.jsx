@@ -19,9 +19,9 @@
     const loadData = async () => {
       try {
         // fetches trivia data from API (backend server)
-        // const response = await fetch('http://localhost:8080/trivia')
+        const response = await fetch('http://localhost:8080/trivia')
         //fetches hardcoded trivia data for testing
-        const response = await fetch('http://localhost:8080/api/data')
+        //const response = await fetch('http://localhost:8080/api/data')
 
         // error handling if problems connecting to backend
         if(!response.ok){
@@ -31,14 +31,29 @@
       // if no errors, parse response in JSON format
       const data = await response.json();
       // testing to see if data has been collected
-      console.log("Received data: ", data.results);
-      // displays data as an empty array if it doesn't work
-      setQuestions(data.results);
-    } catch (error) {
-      console.error(`Error fetching trivia: `, error);
-      setError(error.message);
+      //try adding this starting on line 34:
+console.log("Received data: ", data);
+
+    // Check if data is in the format that we want
+    const questions = Array.isArray(data) ? data : data.results;
+
+    if (Array.isArray(questions)) {
+      setQuestions(questions);
+    } else {
+      throw new Error("Data is not in the expected format");
     }
+  } catch (error) {
+    console.error(`Error fetching trivia: `, error);
+    setError(error.message);
   }
+}
+  //     // displays data as an empty array if it doesn't work
+  //     setQuestions(data.results);
+  //   } catch (error) {
+  //     console.error(`Error fetching trivia: `, error);
+  //     setError(error.message);
+  //   }
+  // }
 
 // load game / fetches questions on page load
   useEffect(() => {
