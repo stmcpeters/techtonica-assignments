@@ -4,9 +4,9 @@ const QuestionCard = ({ question, onSelect, selectedAnswer }) => {
   const handleAnswerClick = (answer) => {
     const isCorrect = checkAnswer(answer, question.correct_answer);
     if(isCorrect) {
-      alert('Correct!')
+      alert('Correct! 🤩')
     } else {
-      alert('Incorrect!')
+      alert('Incorrect! 😢')
     }
   }
 

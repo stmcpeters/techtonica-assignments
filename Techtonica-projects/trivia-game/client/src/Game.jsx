@@ -53,20 +53,18 @@
     const isCorrect = checkAnswer(answer, correctAnswer);
     if(isCorrect) {
       setScore(prevScore => prevScore + 1)
-      alert('Correct!');
+      alert('Correct! 🤩');
     } else {
-      alert('Incorrect!')
+      alert('Incorrect! 😢')
     }
   }, [checkAnswer]);
 
-
-// handle answers
-// if (choice === questions.correct_answers){
-//   setScore(prevScore => prevScore + 1)
-//   alert('Correct!');
-// } else {
-//   alert('Incorrect! Try again');
-// }
+  useEffect(() => {
+    if (score >= 5) {
+      alert("Yay! You won! 🤩");
+      window.location.reload();
+    }
+  }, [score]);
 
   return (
     <>
@@ -87,4 +85,4 @@
 };
 
 
-export default Game
+export default Game;
