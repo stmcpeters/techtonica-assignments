@@ -10,13 +10,14 @@
     const [score, setScore] = useState(0);
   // initializes and sets question states
     const [questions, setQuestions] = useState([]);
+  // Initialize and set selectedAnswers state
     const [selectedAnswers, setSelectedAnswers] = useState({});
 
   // fetch API data from backend
     const loadData = async () => {
       try {
         // fetches trivia data from API (backend server)
-      // const response = await fetch('http://localhost:8080/trivia')
+        //const response = await fetch('http://localhost:8080/trivia')
         //fetches hardcoded trivia data for testing
         const response = await fetch('http://localhost:8080/api/data')
 
@@ -49,22 +50,28 @@
     return userAnswer === correctAnswer;
   }
 
+// callback function to handle user answers
   const handleAnswer = useCallback((answer, correctAnswer) => {
     const isCorrect = checkAnswer(answer, correctAnswer);
+    // increases score and alert for correct answer
     if(isCorrect) {
       setScore(prevScore => prevScore + 1)
       alert('Correct! 🤩');
+      // alert for incorrect answer
     } else {
       alert('Incorrect! 😢')
     }
-  }, [checkAnswer]);
+  }, [checkAnswer]); // array ensures this callback isn't refreshed
 
+// checks score and display winning message when score === 5
   useEffect(() => {
     if (score >= 5) {
       alert("Yay! You won! 🤩");
+      // reload the page to fetch new questions
       window.location.reload();
     }
-  }, [score]);
+  }, [score]); // score is watched for changes
+
 
   return (
     <>
