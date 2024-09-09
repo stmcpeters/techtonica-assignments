@@ -35,6 +35,7 @@ import fakedata from './fakedata.js';
       const data = await response.json();
       // testing to see if data has been collected
       console.log("Received data: ", data.results);
+      console.log('Received data from external API: ', data)
       // sends json data as a response to client side
       res.json(data);
     } catch (error) {
