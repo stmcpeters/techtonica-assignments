@@ -1,6 +1,6 @@
 # Steph McPeters-Esparza Portfolio
 
-![Alt text](/portfolio-screenshot.png)
+![Alt text](portfolio-screenshot.png)
 
 ## Introduction
 Welcome to my portfolio! My name is **Steph McPeters-Esparza** (they/them), and I am a passionate **Full Stack Web Developer**. This portfolio showcases my journey through the Techtonica program, professional experiences, technical skills, and projects I've worked on. My goal is to share my work, connect with like-minded professionals, and create opportunities to collaborate.
