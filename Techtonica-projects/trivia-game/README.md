@@ -3,7 +3,7 @@
 If you're a fan of trivia, you'll love Reel Trivia! Reel Trivia is a quick and easy to play trivia game that fetches and displays 5 trivia questions of medium difficulty from [Open Trivia Database](https://opentdb.com/api_config.php). This project was created for Week 8's project for the Techtonica program. Reel Trivia uses a React front end and a Node.js backend to create an interactive, responsive UI.
 
 ### Demo
-![Reel Trivia Demo](https://github.com/stmcpeters/Techtonica-Assignments/blob/main/Techtonica-projects/trivia-game/Convert%20to%20GIF%20project%20Sept%2008.gif)
+![Reel Trivia Demo](https://github.com/stmcpeters/Techtonica-Assignments/blob/main/Techtonica-projects/trivia-game/Imgur%20video.mp4)
 ### Features
 - Fun, yet challenging trivia questions fetched straight from [Open Trivia Database](https://opentdb.com/api_config.php)
 - Real time feedback so you know right away if your answers are correct
