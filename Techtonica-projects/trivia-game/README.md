@@ -30,7 +30,7 @@ Make sure you have the following installed on your machine:
 - Node.js (which includes npm): [Download Node.js](https://nodejs.org/en/download/package-manager)
 - Git (for cloning the repository): [Download Git](https://git-scm.com/downloads)
 1. Clone the repository <br>
-   `git clone https://github.com/stmcpeters/Techtonica-Assignments/tree/main/Techtonica-projects/trivia-game`
+   `git clone https://github.com/stmcpeters/Techtonica-Assignments/tree/main/Techtonica-projects`
    <br>
    `cd trivia-game`
 2. Set up the backend
