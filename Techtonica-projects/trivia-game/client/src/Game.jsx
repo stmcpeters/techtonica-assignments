@@ -1,5 +1,5 @@
 // import hooks from react
-  import { useState, useEffect } from "react";
+  import { useState, useEffect, useCallback } from "react";
 // import question card component that will display questions + selections
   import QuestionCard from "./QuestionCard";
 
@@ -10,6 +10,7 @@
     const [score, setScore] = useState(0);
   // initializes and sets question states
     const [questions, setQuestions] = useState([]);
+    const [selectedAnswers, setSelectedAnswers] = useState({});
 
   // fetch API data from backend
     const loadData = async () => {
@@ -43,6 +44,21 @@
     fetchData();
   }, []);
 
+// checks to see if the user's answer matches the correct answer
+  const checkAnswer = (userAnswer, correctAnswer) => {
+    return userAnswer === correctAnswer;
+  }
+
+  const handleAnswer = useCallback((answer, correctAnswer) => {
+    const isCorrect = checkAnswer(answer, correctAnswer);
+    if(isCorrect) {
+      setScore(prevScore => prevScore + 1)
+      alert('Correct!');
+    } else {
+      alert('Incorrect!')
+    }
+  }, [checkAnswer]);
+
 
 // handle answers
 // if (choice === questions.correct_answers){
@@ -52,8 +68,6 @@
 //   alert('Incorrect! Try again');
 // }
 
-
-
   return (
     <>
       <div className="Container">
@@ -61,7 +75,11 @@
         <div className="display-score">Score: {score}/{questions.length}</div>
         {/* maps each question and answer to display */}
         {questions && questions.map((question, index) => (
-          <QuestionCard key={index} question={question} />
+          <QuestionCard 
+          key={index} 
+          question={question}
+          onSelect={(answer) => handleAnswer(answer, question.correct_answer, index)}
+          selectedAnswer={selectedAnswers[index]} />
         ))}
       </div>
     </>
