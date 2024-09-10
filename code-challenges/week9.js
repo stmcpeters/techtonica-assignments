@@ -18,9 +18,9 @@ function addNumbers(num1, num2){
   }
 }
 
-console.log(addNumbers(2,3));   // output: 5
-console.log(addNumbers(-2,-3)); // output: -5
-console.log(addNumbers('2',2)); // error
+// console.log(addNumbers(2,3));   // output: 5
+// console.log(addNumbers(-2,-3)); // output: -5
+// console.log(addNumbers('2',2)); // error
 
 // 🗓️Tuesday: The longest word in a string
 // Return the length of the longest word in the provided sentence.
@@ -30,7 +30,28 @@ console.log(addNumbers('2',2)); // error
 // findLongestWordLength("May the force be with you") ---> 5
 // findLongestWordLength("What if we try a super-long word such as otorhinolaryngology") ---> 19
 
+    //Psuedocode
+    // split sentence using split method to divide each word into an array (iterate)
+    // initialize maxLength variable to track longest word => 0, comparison
+    // iterate each word and compare maxLength => if word is greater than maxLength, update maxLength
+    // return the result
+    //Edge case => consideration of punctuation, receiving non-string
 
+function findLongestWordLength(sentence){
+  // split sentence
+  const words = sentence.split(' ');
+  // initialize maxLength to 0
+  let maxLength = 0;
+  // iterate over each word
+  for(const word of words){
+    // update maxLength if current word length is greater
+    maxLength = Math.max(maxLength, word.length)
+  }
+  return maxLength;
+}
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); // 6
+console.log(findLongestWordLength("May the force be with you"));// 5
+console.log(findLongestWordLength("What if we try a super-long word such as otorhinolaryngology")); // 19
 
 // 🎥Wednesday: 
 // Single Number 
