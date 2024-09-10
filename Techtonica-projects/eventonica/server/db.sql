@@ -21,14 +21,14 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: students; Type: TABLE; Schema: public; Owner: -
+-- Name: eventonica; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.students (
-    id integer NOT NULL,
-    firstname character varying(255),
-    lastname character varying(255),
-    is_current boolean
+CREATE TABLE public.eventonica (
+    id integer NOT NULL PRIMARY KEY,
+    title character varying(255),
+    location character varying(255),
+    eventtime DATE
 );
 
 
@@ -36,7 +36,7 @@ CREATE TABLE public.students (
 -- Name: students_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE public.students_id_seq
+CREATE SEQUENCE public.events_id_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
@@ -46,40 +46,40 @@ CREATE SEQUENCE public.students_id_seq
 
 
 --
--- Name: students_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.students_id_seq OWNED BY public.students.id;
+ALTER SEQUENCE public.events_id_seq OWNED BY public.events.id;
 
 
 --
--- Name: students id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: events id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.students ALTER COLUMN id SET DEFAULT nextval('public.students_id_seq'::regclass);
+ALTER TABLE ONLY public.events ALTER COLUMN id SET DEFAULT nextval('public.events_id_seq'::regclass);
 
 
 --
 -- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.students (id, firstname, lastname, is_current) FROM stdin;
+COPY public.events (id, title, location, eventtime) FROM stdin;
 \.
 
 
 --
--- Name: students_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.students_id_seq', 1, false);
+SELECT pg_catalog.setval('public.events_id_seq', 1, false);
 
 
 --
--- Name: students students_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: events events_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.students
-    ADD CONSTRAINT students_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.events
+    ADD CONSTRAINT events_pkey PRIMARY KEY (id);
 
 
 --

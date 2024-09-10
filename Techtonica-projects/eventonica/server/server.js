@@ -62,7 +62,7 @@ app.delete('/api/students/:studentId', async (req, res) => {
     }
 });
 
-//A put request - Update a student 
+// put request - Update a student 
 app.put('/api/students/:studentId', async (req, res) =>{
     //console.log(req.params);
     //This will be the id that I want to find in the DB - the student to be updated
