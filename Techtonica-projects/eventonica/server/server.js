@@ -6,8 +6,8 @@
 // import dotenv to use .env file info
     import dotenv from 'dotenv';
     dotenv.config();
-    import path from 'path';
-    const db = require('./db/db-connection.js');
+// import connection to database 
+    import db from './db/db-connection.js';
 
     const app = express();
 // specifies port of the app backend
@@ -27,10 +27,10 @@ app.get('/', (req, res) => {
 });
 
 // // create the get request for students in the endpoint '/api/students'
-// app.get('/api/students', async (req, res) => {
+// app.get('/events', async (req, res) => {
 //     try {
-//         const { rows: students } = await db.query('SELECT * FROM students');
-//         res.send(students);
+//         const { rows: events } = await db.query('SELECT * FROM events');
+//         res.send(events);
 //     } catch (e) {
 //         return res.status(400).json({ e });
 //     }
