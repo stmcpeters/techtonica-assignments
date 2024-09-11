@@ -19,7 +19,7 @@ a.navbar-brand {
   margin-left: 5em;
 }
 
-.list-students {
+.list-events {
   text-align: center;
   margin-top: 25px;
   flex: 1
@@ -63,9 +63,9 @@ button.btn.btn-primary {
   margin-top: 0.5em;
 }
 
-.form-check {
+/* .form-check {
   margin-top: 1em;
-}
+} */
 
 .card-body {
   margin-left: 2em;
