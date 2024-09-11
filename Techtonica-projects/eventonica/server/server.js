@@ -22,8 +22,8 @@
     app.use(bodyParser.urlencoded({extended: true}));
 
 // creates an endpoint for the route "/""
-app.get('/', (req, res) => {
-    res.json({ message: 'Hola, from My template ExpressJS with React-Vite' });
+app.get('/api', (req, res) => {
+    res.send('Hola, from My template ExpressJS with React-Vite');
 });
 
 // // create the get request for students in the endpoint '/api/students'
@@ -97,5 +97,5 @@ app.get('/', (req, res) => {
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
-    console.log(`Hola, Server listening on ${PORT}`);
+    console.log(`Hola, Server listening on http://localhost:${PORT}`);
 });
