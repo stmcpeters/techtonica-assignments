@@ -23,7 +23,7 @@ const MyForm = ({ onSaveEvent, editingEvent, onUpdateEvent }) => {
     };
 
     const handleDateChange = (event) => {
-        const eventtime = event.target.checked;
+        const eventtime = event.target.value;
         //console.log(eventtime);
         setEvents((events) => ({ ...events, eventtime }));
     };
