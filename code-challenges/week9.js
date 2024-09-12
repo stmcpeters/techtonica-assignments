@@ -49,9 +49,9 @@ function findLongestWordLength(sentence){
   }
   return maxLength;
 }
-console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); // 6
-console.log(findLongestWordLength("May the force be with you"));// 5
-console.log(findLongestWordLength("What if we try a super-long word such as otorhinolaryngology")); // 19
+// console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); // 6
+// console.log(findLongestWordLength("May the force be with you"));// 5
+// console.log(findLongestWordLength("What if we try a super-long word such as otorhinolaryngology")); // 19
 
 // 🎥Wednesday: 
 // Single Number 
@@ -67,6 +67,19 @@ console.log(findLongestWordLength("What if we try a super-long word such as otor
 // Example 1:					Example 2:
 // Input: nums = [0,1,0,3,12]		Input: nums = [0]
 // Output: [1,3,12,0,0]			Output: [0]
+
+// iterate thru array 
+// check if num === 0
+  // remove and add onto the end of the array
+function moveZeros(array) {
+  for (let i = 0; i < array.length; i++){
+  if (i === 0){
+    array.splice(i,1);
+    console.log(array);
+    array.push(i);
+  }
+}}
+console.log(moveZeros([0,1,0,3,12]));
 
 // Challenge: Can you write your answer without making a copy of the array. Could you minimize the total number of operations done?
 
