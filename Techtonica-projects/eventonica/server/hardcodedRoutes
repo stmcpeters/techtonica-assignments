@@ -1,0 +1,51 @@
+import express from 'express';
+import hardcodedEvents from '/Users/beigeh0ney/Desktop/Techtonica/Techtonica-assignments/Techtonica-projects/eventonica/server/hardcodedEvents.js';
+
+
+const router = express.Router();
+
+// let hardcodedEvents = [];
+
+// displays all hardcoded events data
+router.get('/events', (req, res) => {
+  // console.log('received request')
+  // console.log(hardcodedEvents);
+  res.json(hardcodedEvents);
+})
+
+//post route to create new event
+router.post('/events', (req,res) => {
+  // error handling to make sure request has been received
+  console.log('Received POST request');
+  console.log('Request Body:', req.body);
+  // setting the new event equal to the body of the request
+  const event = req.body;
+  // incrementing the event id by 1
+  event.id = hardcodedEvents.length +1;
+  // pushing the new event onto hardcodedEvents array
+  hardcodedEvents.push({...event});
+  // confirmation on client side 
+  res.send(`New event ${event.title} added to database`);
+})
+
+// search by ID - NOT WORKING
+// router.get('/events/:id' , (req, res) => {
+//   const { id } = req.params;
+//   // converts id to ensure its a number
+//   const idNumber = parseInt(id, 10);
+// // error handling if not valid number
+//   if (isNaN(idNumber)) {
+//     return res.status(400).send('Invalid ID');
+//   }
+//   // compares searched id with ids from hardcoded 
+//   const foundEvent = hardcodedEvents.find((event) => event.id === idNumber);
+//   // error handling if no event matches specified id
+//   if(foundEvent){
+//     res.json(foundEvent);
+//   } else {
+//     res.status(404).send('event not found');
+//   }
+// })
+
+
+export default router;
